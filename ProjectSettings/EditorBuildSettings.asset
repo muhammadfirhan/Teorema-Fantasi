@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Dungeon.unity
+    guid: 4d06c785deeb38648803880cc62fb359
+  - enabled: 1
     path: Assets/Scenes/UI/Main_Menu.unity
     guid: 0f8b4f2295331a54b9bb711f6805e50c
   m_configObjects:
