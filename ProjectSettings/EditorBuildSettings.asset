@@ -18,17 +18,20 @@ EditorBuildSettings:
     path: Assets/Scenes/UI/Menu_SelectSave.unity
     guid: 2fc6f15bafafbef47aa69ad427e4ea2a
   - enabled: 1
-    path: Assets/Scenes/UI/Menu_Settings.unity
-    guid: 0af764c15565da34db4cc63699603d0d
-  - enabled: 1
     path: Assets/Scenes/UI/Menu_Profile.unity
     guid: b2b058f0ad876684b8757e0d3c10f18a
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_Settings.unity
+    guid: 0af764c15565da34db4cc63699603d0d
   - enabled: 1
     path: Assets/Scenes/UI/Menu_Shop.unity
     guid: ed4cdc6fe8d74d24c9aa5c8418988b80
   - enabled: 1
     path: Assets/Scenes/UI/Menu_PlayerRankings.unity
     guid: 316aad887e5c6274c9e09f5f5c3f0523
+  - enabled: 1
+    path: Assets/Scenes/UI/Main_CreateProfileAfter.unity
+    guid: 4b98d389f018a1a44823917572b30ef7
   - enabled: 1
     path: Assets/Scenes/UI/Main_SelectProfile.unity
     guid: 08b466e6e38a8c948ae101ea4e2f0f2b
