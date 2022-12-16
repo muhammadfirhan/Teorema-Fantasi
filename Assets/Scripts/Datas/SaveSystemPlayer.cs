@@ -15,6 +15,7 @@ public static class SaveSystemPlayer
             Directory.CreateDirectory(path);
             Debug.Log("Folder created");
         }
+
         DirectoryInfo d = new DirectoryInfo(@path);
         FileInfo[] f = d.GetFiles("*", SearchOption.TopDirectoryOnly);
         Debug.Log("Number of save file: " + f.Length);
@@ -38,7 +39,7 @@ public static class SaveSystemPlayer
         }
         else
         {
-            Debug.Log("Save file failed");
+            Debug.Log("Reach save file limit");
         }
     }
 

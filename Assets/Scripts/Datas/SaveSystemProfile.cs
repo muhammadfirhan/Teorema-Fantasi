@@ -15,6 +15,7 @@ public static class SaveSystemProfile
             Directory.CreateDirectory(path);
             Debug.Log("Folder created");
         }
+
         DirectoryInfo d = new DirectoryInfo(path);
         FileInfo[] f = d.GetFiles("*", SearchOption.TopDirectoryOnly);
         Debug.Log("Number of profile: " + f.Length);
@@ -24,7 +25,7 @@ public static class SaveSystemProfile
     public static void SaveProfile()
     {
         int numProfile = CountProfiles();
-        if(numProfile <= 10)
+        if (numProfile <= 10)
         {
             int saveProfileID = PlayerProfile.profileInstance._profileID;
             string saveProfileName = "/profiledata/profile" + saveProfileID + ".sdf";
@@ -38,7 +39,7 @@ public static class SaveSystemProfile
         }
         else
         {
-            Debug.Log("Save profile failed");
+            Debug.Log("Reaches profile limit");
         }
     }
 

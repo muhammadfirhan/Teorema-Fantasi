@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Laki-laki
+    - m_Text: Laki-Laki
       m_Image: {fileID: 0}
     - m_Text: Perempuan
       m_Image: {fileID: 0}
@@ -2907,7 +2907,6 @@ MonoBehaviour:
   ageField: {fileID: 728022667}
   genderField: {fileID: 78736024}
   popupFail: {fileID: 450529512}
-  profileObject: {fileID: 875861407}
 --- !u!1 &1601677132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4470,7 +4469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Laki-laki
+  m_text: Laki-Laki
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
