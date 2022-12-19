@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     // Child object from player
     private Transform child;
 
+    public bool buttonPressed;
+
     // Set player movement speed
     [SerializeField]
     private float playerSpeed = 2.0f;
@@ -85,6 +87,16 @@ public class PlayerController : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
 
+        if (playerInput.PlayerMain.Interact.IsPressed())
+        {
+            buttonPressed = true;
+        }
+        else
+        {
+            buttonPressed = false;
+        }
+
+        // If wanted the player look into camera direction as well
         /*
         if(movementInput != Vector2.zero)
         {
