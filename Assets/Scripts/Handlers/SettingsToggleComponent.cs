@@ -10,11 +10,12 @@ public class SettingsToggleComponent : MonoBehaviour
     
     public void Toggle_Changed(bool value)
     {
-        if(value == true)
+        if (value == true)
         {
             imageOn.enabled = true;
             imageOff.enabled = false;
-        }else if(value == false)
+        }
+        else if (value == false)
         {
             imageOn.enabled = false;
             imageOff.enabled = true;

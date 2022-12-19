@@ -30,20 +30,18 @@ public class CreateProfileUIHandler : MonoBehaviour
         int pAge = y;
         string pGender = menuOptions[index].text.ToString();
         TMP_Text notifText = popupFail.GetComponentInChildren<TMP_Text>();
-        if (pName.Equals(""))
+        if (pName.Equals("") || pName.Length < 3)
         {
             popupFail.SetActive(true);
-            notifText.text = "Nama tidak boleh kosong";
+            notifText.text = "Nama tidak boleh kosong atau kurang dari 3 huruf";
             nameField.text = "";
-            ageField.text = "";
         }
-        else if (pName.Length >= 4)
+        else if (pName.Length >= 3)
         {
             if (pAge < 7)
             {
                 popupFail.SetActive(true);
-                notifText.text = "Umur terlalu muda";
-                nameField.text = "";
+                notifText.text = "Umur kurang dari 7";
                 ageField.text = "";
             }
             else if (pAge >= 7)

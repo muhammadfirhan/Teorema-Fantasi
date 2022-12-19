@@ -9,6 +9,7 @@ public class PlayerTrack : MonoBehaviour
     public string _characterName;
     public string _characterGender;
     public int _questID;
+    public int _missionID;
     public int _worldID;
     public int _energy;
     public int _profileID;
