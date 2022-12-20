@@ -6,7 +6,18 @@ using TMPro;
 
 public class MenuProfileHandler : MonoBehaviour
 {
+    public TMP_Text profileNameText;
+    public TMP_Text profileAgeText;
+    public TMP_Text profileGenderText;
+
     [SerializeField] private int toMainMenuOffset = 3;
+
+    private void Start()
+    {
+        profileNameText.text = "Nama: " + PlayerProfile.profileInstance._profileName;
+        profileAgeText.text = "Umur: " + PlayerProfile.profileInstance._profileAge;
+        profileGenderText.text = "Gender: " + PlayerProfile.profileInstance._profileGender;
+    }
 
     public void BackToMenu()
     {
