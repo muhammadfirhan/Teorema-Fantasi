@@ -6,7 +6,9 @@ using TMPro;
 
 public class MenuSettingsHandler : MonoBehaviour
 {
+
     [SerializeField] private int toMainMenuOffset = 4;
+
     public void CancelChanges()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
