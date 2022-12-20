@@ -6009,6 +6009,7 @@ MonoBehaviour:
   _characterName: 
   _characterGender: 
   _questID: 0
+  _missionID: 0
   _worldID: 0
   _energy: 0
   _profileID: 0

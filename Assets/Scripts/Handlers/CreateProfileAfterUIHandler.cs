@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System;
-using System.IO;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-public class CreateProfileUIHandler : MonoBehaviour
+public class CreateProfileAfterUIHandler : MonoBehaviour
 {
     public TMP_InputField nameField;
     public TMP_InputField ageField;
     public TMP_Dropdown genderField;
-    //public GameObject popupFail;
     public GameObject notifObject;
-    //public GameObject profileObject;
 
-    [SerializeField] private int toSelectProfileOffset = 9;
+    [SerializeField] private int toMainMenuOffset = 7;
     private float notifTimer = 5.0f;
 
     private void Start()
     {
-        CheckProfile();
+        // Show profile info on debug console
+        /*
+        Debug.Log("Profile ID: " + PlayerProfile.profileInstance._profileID);
+        Debug.Log("Profile Name: " + PlayerProfile.profileInstance._profileName);
+        Debug.Log("Profile Age: " + PlayerProfile.profileInstance._profileAge);
+        Debug.Log("Profile Gender: " + PlayerProfile.profileInstance._profileGender);
+        Debug.Log("Profile Coin: " + PlayerProfile.profileInstance._profileCoin);
+        Debug.Log("Profile Point: " + PlayerProfile.profileInstance._profilePoint);
+        */
     }
-    public void Create_Profile()
+
+    public void CreateProfile()
     {
         // Get the transform component from the dropdown
         var dropdown = genderField.transform.GetComponent<TMP_Dropdown>();
@@ -40,7 +42,6 @@ public class CreateProfileUIHandler : MonoBehaviour
         TMP_Text notifText = notifObject.GetComponentInChildren<TMP_Text>();
         if (pName.Equals("") || pName.Length < 3)
         {
-            //popupFail.SetActive(true);
             notifObject.SetActive(true);
             notifText.text = "Nama tidak boleh kosong atau kurang dari 3 huruf";
             nameField.text = "";
@@ -50,7 +51,6 @@ public class CreateProfileUIHandler : MonoBehaviour
         {
             if (pAge < 7)
             {
-                //popupFail.SetActive(true);
                 notifObject.SetActive(true);
                 notifText.text = "Umur kurang dari 7";
                 ageField.text = "";
@@ -59,7 +59,6 @@ public class CreateProfileUIHandler : MonoBehaviour
             else if (pAge >= 7)
             {
                 //profileObject.SetActive(true);
-                PlayerProfile.profileInstance._profileID = 1;
                 PlayerProfile.profileInstance._profileName = pName;
                 PlayerProfile.profileInstance._profileAge = pAge;
                 PlayerProfile.profileInstance._profileGender = pGender;
@@ -67,22 +66,8 @@ public class CreateProfileUIHandler : MonoBehaviour
                 PlayerProfile.profileInstance._profilePoint = 0;
                 SaveSystemProfile.SaveProfile();
 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
             }
-        }
-    }
-
-    private void CheckProfile()
-    {
-        int profileNum = SaveSystemProfile.CountProfiles();
-        if(profileNum >= 1)
-        {
-            Debug.Log("Profile Detected");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toSelectProfileOffset);
-        }
-        else
-        {
-            Debug.Log("No Profile Detected");
         }
     }
 
