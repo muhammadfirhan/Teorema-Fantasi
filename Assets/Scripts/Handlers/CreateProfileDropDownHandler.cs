@@ -18,8 +18,11 @@ public class CreateProfileDropDownHandler : MonoBehaviour
 
     void DropDownItemSelected(TMP_Dropdown dropdown)
     {
+        // Get option index from dropdown
         int index = dropdown.value;
 
+        // Activate the gender icon logo with corresponding index
+        /*
         if(index == 0)
         {
             maleLogo.SetActive(true);
@@ -29,5 +32,6 @@ public class CreateProfileDropDownHandler : MonoBehaviour
             maleLogo.SetActive(false);
             femaleLogo.SetActive(true);
         }
+        */
     }
 }
