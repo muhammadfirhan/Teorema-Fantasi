@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameplaySelectionHandler : MonoBehaviour
@@ -30,7 +31,8 @@ public class GameplaySelectionHandler : MonoBehaviour
     public GameObject storyObject;
     public GameObject characterObject;
     public GameObject difficultyObject;
-
+    public Image recommendStoryImage1;
+    public Image recommendStoryImage2;
 
     public void BackToMenu()
     {
@@ -68,7 +70,17 @@ public class GameplaySelectionHandler : MonoBehaviour
             minuteField.text = "";
             DurationData.durationInstance._hour = pHour;
             DurationData.durationInstance._minute = pMinute;
-            DurationData.durationInstance._second = 0;
+            DurationData.durationInstance._second = (pHour * 3600) + (pMinute * 60);
+            if(pMinute <= 45 && pHour < 1)
+            {
+                recommendStoryImage1.enabled = true;
+                recommendStoryImage2.enabled = false;
+            }
+            else
+            {
+                recommendStoryImage1.enabled = false;
+                recommendStoryImage2.enabled = true;
+            }
             storyObject.SetActive(true);
         }
     }
@@ -78,6 +90,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         DurationData.durationInstance._hour = 0;
         DurationData.durationInstance._minute = 0;
         DurationData.durationInstance._second = 0;
+        recommendStoryImage1.enabled = false;
+        recommendStoryImage2.enabled = false;
         storyObject.SetActive(false);
     }
 
@@ -146,6 +160,7 @@ public class GameplaySelectionHandler : MonoBehaviour
 
     public void ReturnCharacter()
     {
+        DifficultyData.difficultyInstance._diffID = 0;
         DifficultyData.difficultyInstance._questID = 0;
         DifficultyData.difficultyInstance._energyLimit = 0;
         DifficultyData.difficultyInstance._missionID = 0;
@@ -157,6 +172,7 @@ public class GameplaySelectionHandler : MonoBehaviour
 
     public void SelectEasy()
     {
+        DifficultyData.difficultyInstance._diffID = 1;
         DifficultyData.difficultyInstance._questID = 1;
         DifficultyData.difficultyInstance._energyLimit = 200;
         DifficultyData.difficultyInstance._missionID = 1;
@@ -169,6 +185,7 @@ public class GameplaySelectionHandler : MonoBehaviour
 
     public void SelectNormal()
     {
+        DifficultyData.difficultyInstance._diffID = 2;
         DifficultyData.difficultyInstance._questID = 1;
         DifficultyData.difficultyInstance._energyLimit = 180;
         DifficultyData.difficultyInstance._missionID = 1;
@@ -181,6 +198,7 @@ public class GameplaySelectionHandler : MonoBehaviour
 
     public void SelectHard()
     {
+        DifficultyData.difficultyInstance._diffID = 3;
         DifficultyData.difficultyInstance._questID = 1;
         DifficultyData.difficultyInstance._energyLimit = 150;
         DifficultyData.difficultyInstance._missionID = 1;

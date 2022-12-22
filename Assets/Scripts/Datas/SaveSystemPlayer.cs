@@ -64,4 +64,19 @@ public static class SaveSystemPlayer
             return null;
         }
     }
+
+    public static void DeleteSave(int numID)
+    {
+        string selectedSaveName = "savefile/file" + numID + ".sdf";
+        string path = Application.persistentDataPath + selectedSaveName;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Save File deletion success");
+        }
+        else
+        {
+            Debug.Log("File doesn't exist");
+        }
+    }
 }
