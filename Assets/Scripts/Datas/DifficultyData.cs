@@ -6,6 +6,7 @@ public class DifficultyData : MonoBehaviour
 {
     public static DifficultyData difficultyInstance;
 
+    public int _diffID;
     public int _questID;
     public int _missionID;
     public int _energyLimit;
