@@ -33,6 +33,9 @@ public class GameplaySelectionHandler : MonoBehaviour
     public GameObject difficultyObject;
     public Image recommendStoryImage1;
     public Image recommendStoryImage2;
+    public Image recommendDifficultyImage1;
+    public Image recommendDifficultyImage2;
+    public Image recommendDifficultyImage3;
 
     public void BackToMenu()
     {
@@ -154,6 +157,50 @@ public class GameplaySelectionHandler : MonoBehaviour
             PlayerTrack.playerInstance._characterName = pName;
             PlayerTrack.playerInstance._characterGender = pGender;
             PlayerTrack.playerInstance._profileID = PlayerProfile.profileInstance._profileID;
+
+            if (PlayerTrack.playerInstance._worldID == 1)
+            {
+                if (pMinute <= 30 && pHour < 1)
+                {
+                    recommendDifficultyImage1.enabled = true;
+                    recommendDifficultyImage2.enabled = false;
+                    recommendDifficultyImage3.enabled = false;
+                }
+                else if (pMinute <= 45 && pHour < 1)
+                {
+                    recommendDifficultyImage1.enabled = false;
+                    recommendDifficultyImage2.enabled = true;
+                    recommendDifficultyImage3.enabled = false;
+                }
+                else if (pMinute > 45 || pHour >= 1)
+                {
+                    recommendDifficultyImage1.enabled = false;
+                    recommendDifficultyImage2.enabled = false;
+                    recommendDifficultyImage3.enabled = true;
+                }
+            }
+            else if (PlayerTrack.playerInstance._worldID == 2)
+            {
+                if (pMinute <= 45 && pHour < 1)
+                {
+                    recommendDifficultyImage1.enabled = true;
+                    recommendDifficultyImage2.enabled = false;
+                    recommendDifficultyImage3.enabled = false;
+                }
+                else if (pMinute <= 60 && pHour <= 1)
+                {
+                    recommendDifficultyImage1.enabled = false;
+                    recommendDifficultyImage2.enabled = true;
+                    recommendDifficultyImage3.enabled = false;
+                }
+                else if (pMinute > 60 || pHour >= 1)
+                {
+                    recommendDifficultyImage1.enabled = false;
+                    recommendDifficultyImage2.enabled = false;
+                    recommendDifficultyImage3.enabled = true;
+                }
+            }
+
             difficultyObject.SetActive(true);
         }
     }
@@ -167,6 +214,9 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 0;
         PlayerTrack.playerInstance._missionID = 0;
         PlayerTrack.playerInstance._energy = 0;
+        recommendDifficultyImage1.enabled = false;
+        recommendDifficultyImage2.enabled = false;
+        recommendDifficultyImage3.enabled = false;
         difficultyObject.SetActive(false);
     }
 
