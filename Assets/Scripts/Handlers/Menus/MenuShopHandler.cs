@@ -8,7 +8,7 @@ public class MenuShopHandler : MonoBehaviour
 {
     [SerializeField] private int toProfileOffset = 2;
 
-    public void toProfile()
+    public void ToProfile()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toProfileOffset);
     }

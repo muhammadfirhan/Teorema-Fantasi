@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class MenuPlayerRankingHandler : MonoBehaviour
+public class CustomizeCharacterUIHandler : MonoBehaviour
 {
-    [SerializeField] private int toProfileOffset = 3;
+    [SerializeField] private int toProfileOffset = 24;
 
     public void ToProfile()
     {
