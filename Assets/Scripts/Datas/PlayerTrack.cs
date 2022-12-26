@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTrack : MonoBehaviour
 {
-    public static PlayerTrack playerInstance;
+    public static PlayerTrack playerInstance { get; private set; }
     public int _playerID;
     public string _characterName;
     public string _characterGender;
@@ -12,6 +12,7 @@ public class PlayerTrack : MonoBehaviour
     public int _missionID;
     public int _worldID;
     public int _energy;
+    public int _sceneID;
     public int _profileID;
 
     [SerializeField] private string objectID;

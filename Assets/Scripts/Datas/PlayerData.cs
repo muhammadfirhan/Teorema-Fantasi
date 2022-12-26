@@ -12,6 +12,7 @@ public class PlayerData
     public int _missionID;
     public int _worldID;
     public int _energy;
+    public int _sceneID;
     public float[] _position;
     public int _profileID;
 
@@ -24,6 +25,7 @@ public class PlayerData
         _missionID = PlayerTrack.playerInstance._missionID;
         _worldID = PlayerTrack.playerInstance._worldID;
         _energy = PlayerTrack.playerInstance._energy;
+        _sceneID = PlayerTrack.playerInstance._sceneID;
         _profileID = PlayerTrack.playerInstance._profileID;
         
         _position = new float[3];
