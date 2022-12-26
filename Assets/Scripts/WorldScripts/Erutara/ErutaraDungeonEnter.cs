@@ -20,7 +20,6 @@ public class ErutaraDungeonEnter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         StartCoroutine("TouchButton");
-        
     }
 
     private void OnTriggerExit(Collider other)

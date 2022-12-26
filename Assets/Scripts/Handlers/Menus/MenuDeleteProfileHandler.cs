@@ -85,7 +85,7 @@ public class MenuDeleteProfileHandler : MonoBehaviour
         }
         else
         {
-            profText.text = "Buat Profil";
+            profText.text = "Profil";
         }
     }
 
