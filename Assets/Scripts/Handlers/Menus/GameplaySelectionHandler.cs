@@ -37,11 +37,18 @@ public class GameplaySelectionHandler : MonoBehaviour
     public Image recommendDifficultyImage2;
     public Image recommendDifficultyImage3;
 
+    private void Start()
+    {
+        SceneStateData.sceneInstance.SetCurrent();
+    }
+
     public void BackToMenu()
     {
         DurationData.durationInstance._hour = 0;
         DurationData.durationInstance._minute = 0;
         DurationData.durationInstance._second = 0;
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
     }
 
@@ -230,6 +237,9 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 200;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
+        PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
 
@@ -243,6 +253,9 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 180;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
+        PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
 
@@ -256,6 +269,9 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 150;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
+        PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
 

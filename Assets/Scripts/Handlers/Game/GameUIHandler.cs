@@ -19,7 +19,7 @@ public class GameUIHandler : MonoBehaviour
 
     public void UnPause()
     {
-        pauseOverlay.gameObject.SetActive(false);
+        pauseOverlay.SetActive(false);
     }
 
     public void SaveData()
@@ -68,6 +68,7 @@ public class GameUIHandler : MonoBehaviour
             PlayerTrack.playerInstance._worldID = 0;
             PlayerTrack.playerInstance._energy = 0;
             PlayerTrack.playerInstance._profileID = 0;
+            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene("Main_Menu");
         }

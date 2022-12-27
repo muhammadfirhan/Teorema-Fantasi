@@ -24,6 +24,7 @@ public class MenuProfileHandler : MonoBehaviour
 
     private void Start()
     {
+        SceneStateData.sceneInstance.SetCurrent();
         SetStart();
         SetCoin();
     }
@@ -42,26 +43,36 @@ public class MenuProfileHandler : MonoBehaviour
 
     public void BackToMenu()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
     }
 
     public void ToShop()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toShopOffset);
     }
 
     public void ToHighScore()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toHighScoreOffset);
     }
 
     public void ToSelectProfile()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toSelectProfileOffset);
     }
 
     public void ToDeleteProfile()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toDeleteProfileOffset);
     }
 
@@ -98,6 +109,7 @@ public class MenuProfileHandler : MonoBehaviour
                 PlayerProfile.profileInstance._profileAge = pAge;
                 PlayerProfile.profileInstance._profileGender = pGender;
                 SaveSystemProfile.SaveProfile();
+                SceneStateData.sceneInstance.SetPrevious();
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
             }

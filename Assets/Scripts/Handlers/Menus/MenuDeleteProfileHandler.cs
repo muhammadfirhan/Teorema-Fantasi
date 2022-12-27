@@ -33,11 +33,15 @@ public class MenuDeleteProfileHandler : MonoBehaviour
 
     public void ToProfile()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toProfileOffset);
     }
 
     private void Start()
     {
+        SceneStateData.sceneInstance.SetCurrent();
+
         GetProfile();
     }
 
@@ -99,6 +103,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(1);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }else
             {
@@ -123,6 +129,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(2);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -148,6 +156,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(3);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -173,6 +183,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(4);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -198,6 +210,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(5);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -223,6 +237,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(6);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -248,6 +264,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(7);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -273,6 +291,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(8);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -298,6 +318,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(9);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
@@ -323,6 +345,8 @@ public class MenuDeleteProfileHandler : MonoBehaviour
             {
                 Debug.Log("Active profile deleted");
                 SaveSystemProfile.DeleteProfile(10);
+                SceneStateData.sceneInstance.SetPrevious();
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toSelectProfileOffset);
             }
             else
