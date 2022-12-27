@@ -16,6 +16,7 @@ public class CreateProfileAfterUIHandler : MonoBehaviour
 
     private void Start()
     {
+        SceneStateData.sceneInstance.SetCurrent();
         // Show profile info on debug console
         /*
         Debug.Log("Profile ID: " + PlayerProfile.profileInstance._profileID);
@@ -65,6 +66,7 @@ public class CreateProfileAfterUIHandler : MonoBehaviour
                 PlayerProfile.profileInstance._profileCoin = 0;
                 PlayerProfile.profileInstance._profilePoint = 0;
                 SaveSystemProfile.SaveProfile();
+                SceneStateData.sceneInstance.SetPrevious();
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
             }
