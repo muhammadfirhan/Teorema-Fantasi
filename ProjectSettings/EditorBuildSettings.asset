@@ -89,6 +89,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/Result_Screen.unity
     guid: 2e5cc558cf48832458663ce64d4c2fc7
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_CustomizeCharacter.unity
+    guid: 0d08856ecafebb1449c00521e5b84859
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f8c1560c8d163014aa56d9a596935afa, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 826574e3aa08b3648918e752eaed8aa1, type: 2}
