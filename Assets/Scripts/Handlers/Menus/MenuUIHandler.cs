@@ -17,34 +17,39 @@ public class MenuUIHandler : MonoBehaviour
 
     private void Start()
     {
-       // Show profile info on debug console
-       /*
-       Debug.Log("Profile ID: " + PlayerProfile.profileInstance._profileID);
-       Debug.Log("Profile Name: " + PlayerProfile.profileInstance._profileName);
-       Debug.Log("Profile Age: " + PlayerProfile.profileInstance._profileAge);
-       Debug.Log("Profile Gender: " + PlayerProfile.profileInstance._profileGender);
-       Debug.Log("Profile Coin: " + PlayerProfile.profileInstance._profileCoin);
-       Debug.Log("Profile Point: " + PlayerProfile.profileInstance._profilePoint);
-       */
+        SceneStateData.sceneInstance.SetCurrent();
+        // Show profile info on debug console
+        /*
+        Debug.Log("Profile ID: " + PlayerProfile.profileInstance._profileID);
+        Debug.Log("Profile Name: " + PlayerProfile.profileInstance._profileName);
+        Debug.Log("Profile Age: " + PlayerProfile.profileInstance._profileAge);
+        Debug.Log("Profile Gender: " + PlayerProfile.profileInstance._profileGender);
+        Debug.Log("Profile Coin: " + PlayerProfile.profileInstance._profileCoin);
+        Debug.Log("Profile Point: " + PlayerProfile.profileInstance._profilePoint);
+        */
     }
     
     public void GoToGameplaySelection()
     {
+        SceneStateData.sceneInstance.SetPrevious();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toGameplaySelectionOffset);
     }
 
     public void GoToSelectSave()
     {
+        SceneStateData.sceneInstance.SetPrevious();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toSelectSaveOffset);
     }
 
     public void GoToProfile()
     {
+        SceneStateData.sceneInstance.SetPrevious();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toProfileOffset);
     }
 
     public void GoToSettings()
     {
+        SceneStateData.sceneInstance.SetPrevious();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toSettingsOffset);
     }
 
