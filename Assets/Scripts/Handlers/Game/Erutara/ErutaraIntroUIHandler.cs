@@ -11,13 +11,20 @@ public class ErutaraIntroUIHandler : MonoBehaviour
     public GameObject introObject;
     public GameObject pauseObject;
 
-    public void showPause()
+    private void Start()
+    {
+        SceneStateData.sceneInstance.SetCurrent();
+    }
+
+    public void ShowPause()
     {
         pauseObject.SetActive(true);
     }
 
-    public void toErutaraDungeon()
+    public void ToErutaraDungeon()
     {
+        SceneStateData.sceneInstance.SetPrevious();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +  toErutaraDungeonOffset);
     }
 }
