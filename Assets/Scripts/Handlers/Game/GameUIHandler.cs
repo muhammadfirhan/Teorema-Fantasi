@@ -15,6 +15,8 @@ public class GameUIHandler : MonoBehaviour
     public Button yesButton;
     public Button noButton;
 
+    private GameObject playerObject;
+
     private int eventID;
 
     public void UnPause()
@@ -55,6 +57,7 @@ public class GameUIHandler : MonoBehaviour
     {
         if (eventID == 1)
         {
+            GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             confirmationWindow.SetActive(false);
         }
@@ -67,6 +70,8 @@ public class GameUIHandler : MonoBehaviour
             PlayerTrack.playerInstance._missionID = 0;
             PlayerTrack.playerInstance._worldID = 0;
             PlayerTrack.playerInstance._energy = 0;
+            PlayerTrack.playerInstance._sceneID = 0;
+            PlayerTrack.playerInstance._diffID = 0;
             PlayerTrack.playerInstance._profileID = 0;
             SceneStateData.sceneInstance.SetPrevious();
 
@@ -77,5 +82,17 @@ public class GameUIHandler : MonoBehaviour
     public void NoButtonEvent()
     {
         confirmationWindow.SetActive(false);
+    }
+
+    private void GetPlayerPos()
+    {
+        playerObject = GameObject.FindWithTag("Player");
+        PlayerTrack.playerInstance.transform.position = playerObject.transform.position;
+        playerObject = null;
+    }
+
+    private void SetPlayerPos()
+    {
+
     }
 }
