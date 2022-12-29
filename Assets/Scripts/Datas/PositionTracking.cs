@@ -39,7 +39,7 @@ public class PositionTracking : MonoBehaviour
         positionInstance = this;
         // Command to not destroy the object onload/switch scene
         DontDestroyOnLoad(gameObject);
-    }
+    }   
 
     public void SetPosition(int worldID)
     {
@@ -55,6 +55,10 @@ public class PositionTracking : MonoBehaviour
             _position3[0] = -173;
             _position3[1] = 0;
             _position3[2] = -175;
+        } 
+        else if (inputID == 2)
+        {
+
         }
         else
         {
