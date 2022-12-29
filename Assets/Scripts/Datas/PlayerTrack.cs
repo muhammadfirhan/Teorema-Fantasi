@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTrack : MonoBehaviour
 {
-    public static PlayerTrack playerInstance;
+    public static PlayerTrack playerInstance { get; private set; }
     public int _playerID;
     public string _characterName;
     public string _characterGender;
@@ -12,6 +12,8 @@ public class PlayerTrack : MonoBehaviour
     public int _missionID;
     public int _worldID;
     public int _energy;
+    public int _sceneID;
+    public int _diffID;
     public int _profileID;
 
     [SerializeField] private string objectID;
@@ -42,5 +44,23 @@ public class PlayerTrack : MonoBehaviour
         playerInstance = this;
         // Command to not destroy the object onload/switch scene
         DontDestroyOnLoad(gameObject);
+    }
+
+    public Vector3 LoadSavePos(int playerID)
+    {
+        PlayerData data = SaveSystemPlayer.LoadPlayer(playerID);
+        Vector3 result;
+        if (data != null)
+        {
+            float posX = data._position[0];
+            float posY = data._position[1];
+            float posZ = data._position[2];
+            result = new Vector3(posX, posY, posZ);
+        } else
+        {
+            return new Vector3(0, 0, 0);
+        }
+
+        return result;
     }
 }

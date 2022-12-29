@@ -64,4 +64,19 @@ public static class SaveSystemProfile
             return null;
         }
     }
+
+    public static void DeleteProfile(int numID)
+    {
+        string selectedProfileName = "/profiledata/profile" + numID + ".sdf";
+        string path = Application.persistentDataPath + selectedProfileName;
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log("Profile deletion success");
+        }
+        else
+        {
+            Debug.Log("File doesn't exist");
+        }
+    }
 }
