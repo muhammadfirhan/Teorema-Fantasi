@@ -221,6 +221,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 0;
         PlayerTrack.playerInstance._missionID = 0;
         PlayerTrack.playerInstance._energy = 0;
+        PlayerTrack.playerInstance._diffID = 0;
+        PlayerTrack.playerInstance._sceneID = 0;
         recommendDifficultyImage1.enabled = false;
         recommendDifficultyImage2.enabled = false;
         recommendDifficultyImage3.enabled = false;
@@ -236,6 +238,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 1;
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 200;
+        PlayerTrack.playerInstance._sceneID = 1;
+        PlayerTrack.playerInstance._diffID = 1;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         SceneStateData.sceneInstance.SetPrevious();
@@ -252,6 +256,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 1;
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 180;
+        PlayerTrack.playerInstance._sceneID = 1;
+        PlayerTrack.playerInstance._diffID = 2;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         SceneStateData.sceneInstance.SetPrevious();
@@ -268,6 +274,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 1;
         PlayerTrack.playerInstance._missionID = 1;
         PlayerTrack.playerInstance._energy = 150;
+        PlayerTrack.playerInstance._sceneID = 1;
+        PlayerTrack.playerInstance._diffID = 3;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         SceneStateData.sceneInstance.SetPrevious();
