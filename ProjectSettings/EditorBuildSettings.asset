@@ -6,11 +6,92 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Gameplay/Erutara_Dungeon.unity
-    guid: 4d06c785deeb38648803880cc62fb359
+    path: Assets/Scenes/UI/Main_CreateProfile.unity
+    guid: dbcd9ffb1bd00544c8df36ecf85c3934
   - enabled: 1
     path: Assets/Scenes/UI/Main_Menu.unity
     guid: 0f8b4f2295331a54b9bb711f6805e50c
+  - enabled: 1
+    path: Assets/Scenes/UI/Gameplay_Selection.unity
+    guid: c43950288589fee449d046afb07d9c99
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_SelectSave.unity
+    guid: 2fc6f15bafafbef47aa69ad427e4ea2a
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_Profile.unity
+    guid: b2b058f0ad876684b8757e0d3c10f18a
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_Settings.unity
+    guid: 0af764c15565da34db4cc63699603d0d
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_Shop.unity
+    guid: ed4cdc6fe8d74d24c9aa5c8418988b80
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_PlayerRankings.unity
+    guid: 316aad887e5c6274c9e09f5f5c3f0523
+  - enabled: 1
+    path: Assets/Scenes/UI/Main_CreateProfileAfter.unity
+    guid: 4b98d389f018a1a44823917572b30ef7
+  - enabled: 1
+    path: Assets/Scenes/UI/Main_SelectProfile.unity
+    guid: 08b466e6e38a8c948ae101ea4e2f0f2b
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_DeleteProfile.unity
+    guid: 6a59a21293bbe254a813863157aa1c57
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Intro.unity
+    guid: 4b03982c50a9e94499a3d1e3469b6404
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Dungeon.unity
+    guid: 4d06c785deeb38648803880cc62fb359
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Open.unity
+    guid: b66f7d5294528294b9bcb5e8e9c23675
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Hall.unity
+    guid: 5a335fd794afc944791265243b7a05f9
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Library.unity
+    guid: 06fbafb3586c5fe4b9f37caf994aaa70
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Erutara_Outro.unity
+    guid: e608894477b4ce24c90718fbe733d0df
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Intro.unity
+    guid: 34365e8b4373b7f478cda11188537079
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Castle.unity
+    guid: c0650a366bd8d5445bd0c9c6cd60e81a
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Forest.unity
+    guid: b2c678375f4ab124eb9379843ef126aa
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Hut.unity
+    guid: b7b04937b8e95cd418ef353b113bc72c
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Cave.unity
+    guid: 32b9674424ebe124c866e0a0132a26bf
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Nukariel_Outro.unity
+    guid: c438437c83bde1e4cb7936a16b511ca1
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Puzzle_Type1.unity
+    guid: 0d725144488232a40bc3fa1364901118
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Puzzle_Type2.unity
+    guid: 8f9f52586a6cb0f478b1258f94d53bcc
+  - enabled: 1
+    path: Assets/Scenes/UI/Gameplay_Map.unity
+    guid: 81f00235fdbe7374297fcb15fbb92366
+  - enabled: 1
+    path: Assets/Scenes/UI/Gameplay_Settings.unity
+    guid: 114a4358677ce0246b90545c7551d535
+  - enabled: 1
+    path: Assets/Scenes/UI/Result_Screen.unity
+    guid: 2e5cc558cf48832458663ce64d4c2fc7
+  - enabled: 1
+    path: Assets/Scenes/UI/Menu_CustomizeCharacter.unity
+    guid: 0d08856ecafebb1449c00521e5b84859
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f8c1560c8d163014aa56d9a596935afa, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 826574e3aa08b3648918e752eaed8aa1, type: 2}
