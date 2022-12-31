@@ -33,7 +33,6 @@ public class SelectProfileHandler : MonoBehaviour
 
     private void Start()
     {
-        SceneStateData.sceneInstance.SetCurrent();
         GetProfile();
     }
 
@@ -97,14 +96,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 1;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -122,14 +119,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 2;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -147,14 +142,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 3;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -172,14 +165,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 4;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -197,14 +188,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 5;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -222,14 +211,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 6;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -247,14 +234,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 7;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -272,14 +257,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 8;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -297,14 +280,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 9;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }
@@ -322,14 +303,12 @@ public class SelectProfileHandler : MonoBehaviour
             PlayerProfile.profileInstance._profileGender = data._profileGender;
             PlayerProfile.profileInstance._profileCoin = data._profileCoin;
             PlayerProfile.profileInstance._profilePoint = data._profilePoint;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
         }
         else
         {
             PlayerProfile.profileInstance._profileID = 10;
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toCreateProfileAfterOffset);
         }

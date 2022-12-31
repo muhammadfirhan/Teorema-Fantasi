@@ -13,7 +13,7 @@ public class ErutaraIntroUIHandler : MonoBehaviour
 
     private void Start()
     {
-        SceneStateData.sceneInstance.SetCurrent();
+        StartCoroutine(SetTimer());
     }
 
     public void ShowPause()
@@ -21,10 +21,36 @@ public class ErutaraIntroUIHandler : MonoBehaviour
         pauseObject.SetActive(true);
     }
 
+    private void Update()
+    {
+        if (DurationData.durationInstance._second == 180)
+        {
+            Debug.Log("Waktu tersisa 3 menit lagi");
+            Debug.Log("Mohon menyimpan");
+        }
+        else if (DurationData.durationInstance._second <= 0)
+        {
+            Debug.Log("Waktu habis");
+            DurationData.durationInstance._second = 0;
+            StopCoroutine(SetTimer());
+            SceneManager.LoadScene("Main_Menu");
+        }
+    }
+
+    IEnumerator SetTimer()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            DurationData.durationInstance._second -= 1;
+        }
+    }
+
     public void ToErutaraDungeon()
     {
-        SceneStateData.sceneInstance.SetPrevious();
+        PlayerTrack.playerInstance._sceneID = 2;
 
+        //StopCoroutine(SetTimer());
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +  toErutaraDungeonOffset);
     }
 }
