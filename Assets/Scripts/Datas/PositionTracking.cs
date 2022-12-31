@@ -49,12 +49,12 @@ public class PositionTracking : MonoBehaviour
             _position1[0] = -31;
             _position1[1] = 0;
             _position1[2] = 30.5f;
-            _position2[0] = -160;
+            _position2[0] = 153;
             _position2[1] = 0;
-            _position2[2] = -90;
-            _position3[0] = -173;
+            _position2[2] = 720;
+            _position3[0] = 62;
             _position3[1] = 0;
-            _position3[2] = -175;
+            _position3[2] = 753;
         } 
         else if (inputID == 2)
         {

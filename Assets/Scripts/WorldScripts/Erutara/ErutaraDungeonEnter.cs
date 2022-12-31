@@ -45,6 +45,8 @@ public class ErutaraDungeonEnter : MonoBehaviour
             if (buttonPressed == true)
             {
                 StopCoroutine("TouchButton");
+                PlayerTrack.playerInstance._sceneID = 2;
+
                 SceneManager.LoadScene("Erutara_Dungeon");
             }
         }
@@ -58,5 +60,4 @@ public class ErutaraDungeonEnter : MonoBehaviour
             ButtonUnClicked();
         }
     }
-
 }
