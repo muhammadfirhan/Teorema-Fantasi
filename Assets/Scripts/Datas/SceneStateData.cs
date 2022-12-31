@@ -4,39 +4,21 @@ using UnityEngine;
 
 public class SceneStateData : MonoBehaviour
 {
-    public static SceneStateData sceneInstance { get; private set; }
-    public string _previousScene;
-    public string _currentScene;
+    public static SceneStateData sceneData { get; private set; }
+    public static  string _previousScene;
+    public static string _currentScene;
 
-    [SerializeField] private string objectID;
-
-    private void Awake()
+    private void OnDestroy()
     {
-        // Added object ID with name + object position to string
-        objectID = name + transform.position.ToString();
+        SetPrevious();
     }
 
     private void Start()
     {
-        // Create for loop for iterating all object of same type
-        for (int i = 0; i < Object.FindObjectsOfType<SceneStateData>().Length; i++)
-        {
-            // If the object is not equal to this
-            if (Object.FindObjectsOfType<SceneStateData>()[i] != this)
-            {
-                // If the object have the same ID, then destroy the new instance
-                if (Object.FindObjectsOfType<SceneStateData>()[i].objectID == objectID)
-                {
-                    Destroy(gameObject);
-                }
-            }
-        }
-        // Set the current scene variable value
-        _currentScene = gameObject.scene.name;
-        // Set profile instance to use in other scenes
-        sceneInstance = this;
-        // Command to not destroy the object onload/switch scene
-        DontDestroyOnLoad(gameObject);
+        sceneData = this;
+        Debug.Log("Previous Scene was: " + _previousScene);
+        SetCurrent();
+        Debug.Log("Current Scene is: " + _currentScene);
     }
 
     public void SetPrevious()

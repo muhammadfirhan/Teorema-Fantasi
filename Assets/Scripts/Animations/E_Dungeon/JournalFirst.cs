@@ -30,8 +30,8 @@ public class JournalFirst : MonoBehaviour
         else
         {
             interactButton.onClick.AddListener(delegate { ButtonClicked(); });
+            StartCoroutine(SetButtonPressed());
         }
-        StartCoroutine(SetButtonPressed());
     }
 
     private void OnTriggerEnter(Collider other)

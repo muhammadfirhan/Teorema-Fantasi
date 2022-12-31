@@ -45,6 +45,8 @@ public class ErutaraHallEnter : MonoBehaviour
             if (buttonPressed == true)
             {
                 StopCoroutine("TouchButton");
+                PlayerTrack.playerInstance._sceneID = 4;
+
                 SceneManager.LoadScene("Erutara_Hall");
             }
         }

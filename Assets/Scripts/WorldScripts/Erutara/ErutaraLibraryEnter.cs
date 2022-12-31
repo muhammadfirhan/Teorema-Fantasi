@@ -45,6 +45,8 @@ public class ErutaraLibraryEnter : MonoBehaviour
             if (buttonPressed == true)
             {
                 StopCoroutine("TouchButton");
+                PlayerTrack.playerInstance._sceneID = 5;
+
                 SceneManager.LoadScene("Erutara_Library");
             }
         }
