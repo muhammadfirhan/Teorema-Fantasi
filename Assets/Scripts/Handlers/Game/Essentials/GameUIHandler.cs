@@ -26,7 +26,6 @@ public class GameUIHandler : MonoBehaviour
 
     public void SaveData()
     {
-        Debug.Log("Save button clicked");
         if (SceneStateData._currentScene.Equals("Erutara_Intro"))
         {
             Debug.Log("You can't save here");

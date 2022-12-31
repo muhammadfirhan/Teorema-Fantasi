@@ -47,18 +47,26 @@ public class PositionTracking : MonoBehaviour
         if (inputID == 1)
         {
             _position1[0] = -31;
-            _position1[1] = 0;
+            _position1[1] = 1;
             _position1[2] = 30.5f;
             _position2[0] = 153;
-            _position2[1] = 0;
+            _position2[1] = 1;
             _position2[2] = 720;
             _position3[0] = 62;
-            _position3[1] = 0;
+            _position3[1] = 1;
             _position3[2] = 753;
         } 
         else if (inputID == 2)
         {
-
+            _position1[0] = -6;
+            _position1[1] = 1;
+            _position1[2] = -23;
+            _position2[0] = 119;
+            _position2[1] = 1;
+            _position2[2] = 457.5f;
+            _position3[0] = 186;
+            _position3[1] = 1;
+            _position3[2] = 552;
         }
         else
         {

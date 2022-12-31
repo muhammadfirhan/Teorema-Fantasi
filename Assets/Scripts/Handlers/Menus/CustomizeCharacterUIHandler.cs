@@ -6,7 +6,7 @@ using TMPro;
 
 public class CustomizeCharacterUIHandler : MonoBehaviour
 {
-    [SerializeField] private int toProfileOffset = 24;
+    [SerializeField] private int toProfileOffset = 22;
 
     public void ToProfile()
     {

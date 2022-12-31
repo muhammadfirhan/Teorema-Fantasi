@@ -11,7 +11,7 @@ public class ErutaraIntroUIHandler : MonoBehaviour
     public GameObject introObject;
     public GameObject pauseObject;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(SetTimer());
     }
