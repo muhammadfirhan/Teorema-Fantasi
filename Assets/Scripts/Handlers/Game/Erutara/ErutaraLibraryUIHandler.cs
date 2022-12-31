@@ -18,7 +18,7 @@ public class ErutaraLibraryUIHandler : MonoBehaviour
     private int energyLimit;
     private float waitAddEnergy = 60f;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(SetTimer());
         energyLimit = DifficultyData.difficultyInstance._energyLimit;

@@ -18,7 +18,7 @@ public class ErutaraDungeonUIHandler : MonoBehaviour
     private int energyLimit;
     private float waitAddEnergy = 60f;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(SetTimer());
         if (SceneStateData._previousScene.Equals("Erutara_Open"))
