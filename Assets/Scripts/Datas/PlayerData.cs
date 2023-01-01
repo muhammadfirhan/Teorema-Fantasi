@@ -31,9 +31,6 @@ public class PlayerData
         _profileID = PlayerTrack.playerInstance._profileID;
 
         GameObject playerObject = GameObject.FindWithTag("Player");
-        Debug.Log("Pos X Saved Player: " + playerObject.transform.position.x);
-        Debug.Log("Pos Y Saved Player: " + playerObject.transform.position.y);
-        Debug.Log("Pos Z Saved Player: " + playerObject.transform.position.z);
         _position = new float[3];
         _position[0] = playerObject.transform.position.x;
         _position[1] = playerObject.transform.position.y;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneStateData : MonoBehaviour
 {
     public static SceneStateData sceneData { get; private set; }
-    public static  string _previousScene;
+    public static string _previousScene;
     public static string _currentScene;
 
     private void OnDestroy()
@@ -13,12 +13,10 @@ public class SceneStateData : MonoBehaviour
         SetPrevious();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         sceneData = this;
-        Debug.Log("Previous Scene was: " + _previousScene);
         SetCurrent();
-        Debug.Log("Current Scene is: " + _currentScene);
     }
 
     public void SetPrevious()
