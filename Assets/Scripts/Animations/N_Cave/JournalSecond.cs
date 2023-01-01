@@ -17,7 +17,8 @@ public class JournalSecond : MonoBehaviour
 
     [SerializeField] private int missionID;
     [SerializeField] private bool buttonPressed;
-    private int journalMissionID = 5;
+    [SerializeField] private bool playerNear;
+    private readonly int journalMissionID = 5;
 
     private void Start()
     {
@@ -36,12 +37,13 @@ public class JournalSecond : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
         anim.SetBool("QuestCleared", false);
         anim.SetTrigger("PlayerProximity");
     }
@@ -61,7 +63,7 @@ public class JournalSecond : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true)
+            if (buttonPressed && playerNear)
             {
                 if (PlayerTrack.playerInstance._missionID < missionID)
                 {
@@ -73,6 +75,7 @@ public class JournalSecond : MonoBehaviour
                     journalUI.SetActive(true);
                     energyUI.SetActive(true);
                     journalObject.SetActive(false);
+                    ButtonUnClicked();
                     StopCoroutine("TouchButton");
                 }
             }

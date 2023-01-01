@@ -1,3 +1,5 @@
+(Note: Baker House, Darth_Artisan, and MaximeBrunoni folders not used in any scene)
+
 1. StarterAssets : https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526
 2. Onscreen Controls: https://www.kenney.nl/assets/onscreen-controls
 3. Game Icons: https://kenney.nl/assets/game-icons
@@ -25,3 +27,5 @@ Link Author: https://www.artstation.com/hauzerlaszlo
 17. Medival Fantasy – Customizable Characters by Lukebox: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/customizable-characters-medieval-fantasy-hd-175251 
 Link Author: https://olipa.games/contact.html 
 18. Logo Yarsi University: https://yarsi.ac.id
+19. Logo Rumah Bijak Digital: https://www.facebook.com/photo/?fbid=195412772858938&set=a.195412769525605 
+20. Puzzle Pack 2: https://kenney.nl/assets/puzzle-pack-2
