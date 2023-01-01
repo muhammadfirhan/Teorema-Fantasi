@@ -6,7 +6,7 @@ public class LoadGameHandler : MonoBehaviour
 {
     private GameObject playerObject;
 
-    private void Start()
+    private void Awake()
     {
         if (SceneStateData._previousScene.Equals("Menu_SelectSave"))
         {
@@ -14,20 +14,15 @@ public class LoadGameHandler : MonoBehaviour
             SetPlayerPos();
         }
     }
-
     private void SetPlayerPos()
     {
         playerObject = GameObject.FindWithTag("Player");
-        Debug.Log(playerObject.transform.position);
         PlayerData data = SaveSystemPlayer.LoadPlayer(PlayerTrack.playerInstance._playerID);
         if (data != null)
         {
             float posX = data._position[0];
             float posY = data._position[1];
             float posZ = data._position[2];
-            Debug.Log("Pos X: " + posX);
-            Debug.Log("Pos Y: " + posY);
-            Debug.Log("Pos Z: " + posZ);
 
             playerObject.transform.position = new Vector3(posX, posY, posZ);
         }
