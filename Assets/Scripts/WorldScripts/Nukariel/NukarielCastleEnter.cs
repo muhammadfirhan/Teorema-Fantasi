@@ -10,21 +10,24 @@ public class NukarielCastleEnter : MonoBehaviour
     public Button interactButton;
 
     [SerializeField] private bool buttonPressed;
+    [SerializeField] private bool playerNear;
 
     private void Start()
     {
+        playerNear = buttonPressed = false;
         interactButton.onClick.AddListener(delegate { ButtonClicked(); });
         StartCoroutine(SetButtonPressed());
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
     }
 
     void ButtonClicked()
@@ -42,7 +45,7 @@ public class NukarielCastleEnter : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true && PlayerTrack.playerInstance._missionID >= 9)
+            if (buttonPressed && PlayerTrack.playerInstance._missionID >= 9 && playerNear)
             {
                 StopCoroutine("TouchButton");
                 PlayerTrack.playerInstance._sceneID = 2;

@@ -10,21 +10,24 @@ public class ErutaraLibraryEnter : MonoBehaviour
     public Button interactButton;
 
     [SerializeField] private bool buttonPressed;
+    [SerializeField] private bool playerNear;
 
     private void Start()
     {
+        playerNear = buttonPressed = false;
         interactButton.onClick.AddListener(delegate { ButtonClicked(); });
         StartCoroutine(SetButtonPressed());
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
     }
 
     void ButtonClicked()
@@ -42,12 +45,15 @@ public class ErutaraLibraryEnter : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true)
+            if (buttonPressed && playerNear)
             {
-                StopCoroutine("TouchButton");
-                PlayerTrack.playerInstance._sceneID = 5;
+                if (PlayerTrack.playerInstance._missionID >= 3)
+                {
+                    StopCoroutine("TouchButton");
+                    PlayerTrack.playerInstance._sceneID = 5;
 
-                SceneManager.LoadScene("Erutara_Library");
+                    SceneManager.LoadScene("Erutara_Library");
+                }
             }
         }
     }

@@ -17,10 +17,12 @@ public class JournalFirst : MonoBehaviour
 
     [SerializeField] private int missionID;
     [SerializeField] private bool buttonPressed;
-    private int journalMissionID = 2;
+    [SerializeField] private bool playerNear;
+    private readonly int journalMissionID = 2;
 
     private void Start()
     {
+        playerNear = buttonPressed = false;
         missionID = journalMissionID;
         if (PlayerTrack.playerInstance._missionID >= missionID)
         {
@@ -36,12 +38,13 @@ public class JournalFirst : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
         anim.SetBool("QuestCleared", false);
         anim.SetTrigger("PlayerProximity");
     }
@@ -61,11 +64,12 @@ public class JournalFirst : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true)
+            if (buttonPressed && playerNear)
             {
                 if (PlayerTrack.playerInstance._missionID < missionID)
                 {
                     PlayerTrack.playerInstance._missionID += 1;
+                    PlayerTrack.playerInstance._questID += 1;
                     canvasUI.GetComponent<ErutaraDungeonUIHandler>().TriggerEnergy();
                     anim.SetBool("QuestCleared", true);
                     anim.SetTrigger("PlayerProximity");
@@ -73,6 +77,7 @@ public class JournalFirst : MonoBehaviour
                     journalUI.SetActive(true);
                     energyUI.SetActive(true);
                     journalObject.SetActive(false);
+                    ButtonUnClicked();
                     StopCoroutine("TouchButton");
                 }
             }
