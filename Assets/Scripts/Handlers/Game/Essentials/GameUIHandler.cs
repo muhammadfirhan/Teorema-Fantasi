@@ -145,6 +145,7 @@ public class GameUIHandler : MonoBehaviour
         }
     }
 
+    /*
     public void YesButtonEvent(int eventID)
     {
         if (eventID == 1)
@@ -173,6 +174,7 @@ public class GameUIHandler : MonoBehaviour
             SceneManager.LoadScene("Main_Menu");
         }
     }
+    */
 
     public void NoButtonEvent()
     {
