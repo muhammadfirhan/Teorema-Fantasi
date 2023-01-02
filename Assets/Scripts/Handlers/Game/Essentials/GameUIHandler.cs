@@ -72,7 +72,7 @@ public class GameUIHandler : MonoBehaviour
 
     public void SaveButtonEvent()
     {
-        GetPlayerPos();
+        //GetPlayerPos();
         SaveSystemPlayer.SavePlayer();
         //PlayerTrack.playerInstance.transform.position = prevPos;
         confirmationWindow.SetActive(false);
@@ -138,7 +138,7 @@ public class GameUIHandler : MonoBehaviour
         }
         else
         {
-            GetPlayerPos();
+            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             //PlayerTrack.playerInstance.transform.position = prevPos;
             StartCoroutine(SaveTime());

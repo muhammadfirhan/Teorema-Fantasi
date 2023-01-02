@@ -28,7 +28,6 @@ public class NukarielForestUIHandler : MonoBehaviour
             float posZ = PositionTracking.positionInstance._position2[2];
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
-            playerObject = null;
         }
         else if (SceneStateData._previousScene.Equals("Nukariel_Cave"))
         {
@@ -37,7 +36,6 @@ public class NukarielForestUIHandler : MonoBehaviour
             float posZ = PositionTracking.positionInstance._position3[2];
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
-            playerObject = null;
         }
 
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
@@ -62,7 +60,7 @@ public class NukarielForestUIHandler : MonoBehaviour
             Debug.Log("Waktu habis");
             DurationData.durationInstance._second = 0;
             StopCoroutine(SetTimer());
-            GetPlayerPos();
+            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             StartCoroutine(SaveTime());
         }
