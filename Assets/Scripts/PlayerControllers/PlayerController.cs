@@ -5,6 +5,8 @@ using UnityEngine;
 // Script for player movement
 public class PlayerController : MonoBehaviour
 {
+
+    //public GameObject playerObject;
     // Input action object
     private Player playerInput;
     // Character Controller object
@@ -19,11 +21,13 @@ public class PlayerController : MonoBehaviour
     // Child object from player
     private Transform child;
 
+    //public Animator anim;
+
     public bool buttonPressed;
 
     // Set player movement speed
     [SerializeField]
-    private float playerSpeed = 2.0f;
+    private float playerSpeed = 5.0f;
     // Set gravity value
     [SerializeField]
     private float gravityValue = -9.81f;
@@ -35,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerInput = new Player();
+        //anim = playerObject.GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
     }
 
@@ -75,7 +80,8 @@ public class PlayerController : MonoBehaviour
         // Set vector y movement to 0
         move.y = 0f;
         // Initialize movement to character controller
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        controller.Move(playerSpeed * Time.deltaTime * move);
+        //StartCoroutine(CheckMoveInput(movementInput));
 
         // Make sure that the player object move forward
          if (move != Vector3.zero)
@@ -105,4 +111,178 @@ public class PlayerController : MonoBehaviour
         }
         */
     }
+
+    /*
+    IEnumerator CheckMoveInput(Vector2 input)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            if (input.y > 0 && input.y <= 0.5)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsRunning", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsWalking", true);
+                playerSpeed = 5;
+                anim.SetBool("IsForward", true);
+                if (input.x > 0 && input.x <= 0.5)
+                {
+                    anim.SetBool("IsLeft", false);
+                    anim.SetBool("IsRight", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else if (input.x < 0 && input.x >= -0.5)
+                {
+                    anim.SetBool("IsRight", false);
+                    anim.SetBool("IsLeft", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else
+                {
+                    StopCoroutine(CheckMoveInput(input));
+                }
+            }
+            else if (input.y > 0.5 && input.y <= 1)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsRunning", true);
+                playerSpeed = 10;
+                anim.SetBool("IsForward", true);
+                if (input.x > 0.5 && input.x <= 1)
+                {
+                    anim.SetBool("IsLeft", false);
+                    anim.SetBool("IsRight", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else if (input.x < -0.5 && input.x >= -1)
+                {
+                    anim.SetBool("IsRight", false);
+                    anim.SetBool("IsLeft", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else
+                {
+                    StopCoroutine(CheckMoveInput(input));
+                }
+            }
+            else if (input.y > 0 || input.y <= 1 && input.x > 0 && input.x <= 0.5)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsRunning", false);
+                anim.SetBool("IsWalking", true);
+                anim.SetBool("IsLeft", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsRight", true);
+                playerSpeed = 5;
+                StopCoroutine(CheckMoveInput(input));
+            }
+            else if (input.y > 0 || input.y <= 1 && input.x > 0.5 && input.x <= 1)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsRunning", true);
+                anim.SetBool("IsLeft", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsRight", true);
+                playerSpeed = 10;
+                StopCoroutine(CheckMoveInput(input));
+            }
+            else if (input.y > 0 || input.y <= 1 && input.x < 0 && input.x >= -0.5)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsRunning", false);
+                anim.SetBool("IsWalking", true);
+                anim.SetBool("IsRight", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsLeft", true);
+                playerSpeed = 5;
+                StopCoroutine(CheckMoveInput(input));
+            }
+            else if (input.y > 0 || input.y <= 1 && input.x < -0.5 && input.x >= -1)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsRunning", true);
+                anim.SetBool("IsRight", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsLeft", true);
+                playerSpeed = 10;
+                StopCoroutine(CheckMoveInput(input));
+            }
+            else if (input.y < 0 && input.y >= -0.5)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsRunning", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsWalking", true);
+                playerSpeed = 5;
+                anim.SetBool("IsBackwards", true);
+                if (input.x > 0 && input.x <= 0.5)
+                {
+                    anim.SetBool("IsLeft", false);
+                    anim.SetBool("IsRight", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else if (input.x < 0 && input.x >= -0.5)
+                {
+                    anim.SetBool("IsRight", false);
+                    anim.SetBool("IsLeft", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else
+                {
+                    StopCoroutine(CheckMoveInput(input));
+                }
+            }
+            else if (input.y < -0.5 && input.y >= -1)
+            {
+                anim.SetBool("IsIdle", false);
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsRunning", true);
+                playerSpeed = 10;
+                anim.SetBool("IsBackwards", true);
+                if (input.x > 0.5 && input.x <= 1)
+                {
+                    anim.SetBool("IsLeft", false);
+                    anim.SetBool("IsRight", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else if (input.x < -0.5 && input.x >= -1)
+                {
+                    anim.SetBool("IsRight", false);
+                    anim.SetBool("IsLeft", true);
+                    StopCoroutine(CheckMoveInput(input));
+                }
+                else
+                {
+                    StopCoroutine(CheckMoveInput(input));
+                }
+            }
+            else if (input.y == 0 && input.x == 0)
+            {
+                anim.SetBool("IsWalking", false);
+                anim.SetBool("IsRunning", false);
+                anim.SetBool("IsForward", false);
+                anim.SetBool("IsBackwards", false);
+                anim.SetBool("IsLeft", false);
+                anim.SetBool("IsRight", false);
+                anim.SetBool("IsIdle", true);
+                playerSpeed = 5;
+                StopCoroutine(CheckMoveInput(input));
+            }
+            else
+            {
+                StopCoroutine(CheckMoveInput(input));
+            }
+        }
+    }
+    */
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class ErutaraDungeonEnter : MonoBehaviour
 {
@@ -10,21 +11,24 @@ public class ErutaraDungeonEnter : MonoBehaviour
     public Button interactButton;
 
     [SerializeField] private bool buttonPressed;
+    [SerializeField] private bool playerNear;
 
     private void Start()
     {
+        playerNear = buttonPressed = false;
         interactButton.onClick.AddListener(delegate { ButtonClicked(); });
         StartCoroutine(SetButtonPressed());
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
     }
 
     void ButtonClicked()
@@ -42,10 +46,15 @@ public class ErutaraDungeonEnter : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true)
+            if (buttonPressed && playerNear)
             {
-                StopCoroutine("TouchButton");
-                SceneManager.LoadScene("Erutara_Dungeon");
+                if (PlayerTrack.playerInstance._missionID >= 4)
+                {
+                    StopCoroutine("TouchButton");
+                    PlayerTrack.playerInstance._sceneID = 2;
+
+                    SceneManager.LoadScene("Erutara_Dungeon");
+                }
             }
         }
     }
@@ -58,5 +67,4 @@ public class ErutaraDungeonEnter : MonoBehaviour
             ButtonUnClicked();
         }
     }
-
 }

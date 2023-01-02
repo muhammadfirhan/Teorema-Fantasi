@@ -66,7 +66,6 @@ public class CreateProfileUIHandler : MonoBehaviour
                 PlayerProfile.profileInstance._profileCoin = 0;
                 PlayerProfile.profileInstance._profilePoint = 0;
                 SaveSystemProfile.SaveProfile();
-                SceneStateData.sceneInstance.SetPrevious();
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
@@ -79,7 +78,6 @@ public class CreateProfileUIHandler : MonoBehaviour
         if(profileNum >= 1)
         {
             Debug.Log("Profile Detected");
-            SceneStateData.sceneInstance.SetPrevious();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + toSelectProfileOffset);
         }

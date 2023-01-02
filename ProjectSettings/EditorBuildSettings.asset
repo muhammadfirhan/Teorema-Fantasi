@@ -81,12 +81,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay/Puzzle_Type2.unity
     guid: 8f9f52586a6cb0f478b1258f94d53bcc
   - enabled: 1
-    path: Assets/Scenes/UI/Gameplay_Map.unity
-    guid: 81f00235fdbe7374297fcb15fbb92366
-  - enabled: 1
-    path: Assets/Scenes/UI/Gameplay_Settings.unity
-    guid: 114a4358677ce0246b90545c7551d535
-  - enabled: 1
     path: Assets/Scenes/UI/Result_Screen.unity
     guid: 2e5cc558cf48832458663ce64d4c2fc7
   - enabled: 1

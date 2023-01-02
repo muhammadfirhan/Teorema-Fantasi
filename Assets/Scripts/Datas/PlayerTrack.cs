@@ -16,7 +16,7 @@ public class PlayerTrack : MonoBehaviour
     public int _diffID;
     public int _profileID;
 
-    [SerializeField] private string objectID;
+    public string objectID;
 
     private void Awake()
     {
