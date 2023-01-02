@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMaterialRenderer : MonoBehaviour
 {
-    private void Start()
+    private void Awake()
     {
         Renderer playerRenderer = GetComponent<Renderer>();
         Material playerMat = playerRenderer.material;
