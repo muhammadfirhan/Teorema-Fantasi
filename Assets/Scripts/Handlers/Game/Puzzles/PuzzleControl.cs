@@ -51,11 +51,11 @@ public class PuzzleControl : MonoBehaviour
         } 
         else if (p_selected != null && playerInput.PuzzleMain.RotateRight.IsPressed())
         {
-            p_selected.RotateRight();
+            //p_selected.RotateRight();
         }
         else if (p_selected != null && playerInput.PuzzleMain.RotateLeft.IsPressed())
         {
-            p_selected.RotateLeft();
+            //p_selected.RotateLeft();
         }
 
         MarkerHandling();

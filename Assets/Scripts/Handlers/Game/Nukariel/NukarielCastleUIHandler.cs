@@ -28,7 +28,6 @@ public class NukarielCastleUIHandler : MonoBehaviour
             float posZ = PositionTracking.positionInstance._position1[2];
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
-            playerObject = null;
         }
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 5)
@@ -52,7 +51,7 @@ public class NukarielCastleUIHandler : MonoBehaviour
             Debug.Log("Waktu habis");
             DurationData.durationInstance._second = 0;
             StopCoroutine(SetTimer());
-            GetPlayerPos();
+            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             StartCoroutine(SaveTime());
         }

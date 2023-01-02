@@ -32,6 +32,6 @@ public class LoadGameHandler : MonoBehaviour
         }
         //Vector3 savePos = PlayerTrack.playerInstance.LoadSavePos(PlayerTrack.playerInstance._playerID);
         //playerObject.transform.position = savePos;
-        playerObject = null;
+        //playerObject = null;
     }
 }

@@ -9,6 +9,8 @@ public class PuzzleManagerOne : MonoBehaviour
 
     [SerializeField] int totalpieces1 = 0;
 
+    [SerializeField] int correctPieces = 0;
+
     private void Start()
     {
         totalpieces1 = piecesHolder1.transform.childCount;
@@ -18,5 +20,22 @@ public class PuzzleManagerOne : MonoBehaviour
         {
             pieces1[i] = piecesHolder1.transform.GetChild(i).gameObject;
         }
+    }
+
+    public void CorrectMove()
+    {
+        correctPieces += 1;
+
+        Debug.Log("Correct move!");
+
+        if (correctPieces == totalpieces1)
+        {
+            Debug.Log("You win!");
+        }
+    }
+
+    public void WrongMove()
+    {
+        correctPieces -= 1;
     }
 }

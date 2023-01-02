@@ -23,20 +23,20 @@ public class ErutaraOpenUIHandler : MonoBehaviour
         StartCoroutine(SetTimer());
         if (SceneStateData._previousScene.Equals("Erutara_Hall"))
         {
+            Debug.Log("Was hall");
             float posX = PositionTracking.positionInstance._position2[0];
             float posY = PositionTracking.positionInstance._position2[1];
             float posZ = PositionTracking.positionInstance._position2[2];
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
-            playerObject = null;
-        }else if (SceneStateData._previousScene.Equals("Erutara_Library"))
+        }
+        else if (SceneStateData._previousScene.Equals("Erutara_Library"))
         {
             float posX = PositionTracking.positionInstance._position3[0];
             float posY = PositionTracking.positionInstance._position3[1];
             float posZ = PositionTracking.positionInstance._position3[2];
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
-            playerObject = null;
         }
 
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
@@ -61,7 +61,7 @@ public class ErutaraOpenUIHandler : MonoBehaviour
             Debug.Log("Waktu habis");
             DurationData.durationInstance._second = 0;
             StopCoroutine(SetTimer());
-            GetPlayerPos();
+            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             StartCoroutine(SaveTime());
         }
