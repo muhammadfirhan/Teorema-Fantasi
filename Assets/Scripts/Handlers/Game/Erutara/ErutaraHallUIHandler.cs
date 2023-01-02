@@ -43,7 +43,7 @@ public class ErutaraHallUIHandler : MonoBehaviour
             Debug.Log("Waktu habis");
             DurationData.durationInstance._second = 0;
             StopCoroutine(SetTimer());
-            GetPlayerPos();
+            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             StartCoroutine(SaveTime());
         }
