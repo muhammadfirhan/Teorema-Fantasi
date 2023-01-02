@@ -36,7 +36,7 @@ public class NukarielKingHandler : MonoBehaviour
 
     void ButtonUnClicked()
     {
-        playerNear = buttonPressed = false;
+        buttonPressed = false;
     }
 
     IEnumerator TouchButton()
@@ -47,7 +47,7 @@ public class NukarielKingHandler : MonoBehaviour
             if (buttonPressed && PlayerTrack.playerInstance._missionID == 1 && playerNear)
             {
                 StopCoroutine("TouchButton");
-                PlayerTrack.playerInstance._missionID = 2;
+                PlayerTrack.playerInstance._missionID += 1;
             }
         }
     }
