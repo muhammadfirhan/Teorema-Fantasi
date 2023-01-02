@@ -7,28 +7,30 @@ using UnityEngine.UI;
 public class StoneDoorIntro : MonoBehaviour
 {
     public Animator anim;
-    public GameObject stoneDoor;
     public PlayerController controller;
     public Button interactButton;
 
     [SerializeField] private int missionMinID;
     [SerializeField] private bool buttonPressed;
+    [SerializeField] private bool playerNear;
 
     private void Start()
     {
-        missionMinID = stoneDoor.GetComponent<ErutaraDungeonStoneDoorIntro>().missionMinID;
+        missionMinID = 1;
+        playerNear = buttonPressed = false;
         interactButton.onClick.AddListener(delegate { ButtonClicked(); });
         StartCoroutine(SetButtonPressed());
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        playerNear = true;
         StartCoroutine("TouchButton");
     }
 
     private void OnTriggerExit(Collider other)
     {
-        buttonPressed = false;
+        playerNear = buttonPressed = false;
         anim.SetBool("QuestCleared", false);
         anim.SetTrigger("PlayerProximity");
     }
@@ -48,12 +50,13 @@ public class StoneDoorIntro : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1);
-            if (buttonPressed == true)
+            if (buttonPressed && playerNear)
             {
                 if (PlayerTrack.playerInstance._missionID >= missionMinID)
                 {
                     anim.SetBool("QuestCleared", true);
                     anim.SetTrigger("PlayerProximity");
+                    ButtonUnClicked();
                     StopCoroutine("TouchButton");
                 }
             }

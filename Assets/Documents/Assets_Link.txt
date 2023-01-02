@@ -1,3 +1,5 @@
+(Note: Baker House, Darth_Artisan, and MaximeBrunoni folders not used in any scene)
+
 1. StarterAssets : https://assetstore.unity.com/packages/essentials/starter-assets-third-person-character-controller-196526
 2. Onscreen Controls: https://www.kenney.nl/assets/onscreen-controls
 3. Game Icons: https://kenney.nl/assets/game-icons
@@ -6,3 +8,24 @@ Author link: rainbowgame@outlook.com
 5. UI Audio: https://kenney.nl/assets/ui-audio 
 6. RPG Audio: https://kenney.nl/assets/rpg-audio 
 7. Interface Audio: https://kenney.nl/assets/interface-sounds
+8. Basic Motion FREE: https://assetstore.unity.com/packages/3d/animations/basic-motions-free-154271
+9. Casual Game BGM #5: https://assetstore.unity.com/packages/audio/music/casual-game-bgm-5-135943
+10. Fantasy Skybox Free by Render Knight: https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353
+Author Link: https://render-knight.com/
+11. Modular Castle by PolySoft3D: https://assetstore.unity.com/packages/3d/environments/dungeons/modular-castle-121360
+Author Link: https://alexanderzed.artstation.com/
+12. Stylized Terrain Texture by LOWPOLY: https://assetstore.unity.com/packages/2d/textures-materials/floors/stylized-terrain-texture-153469
+Author Link: https://lowlypoly.com/
+13. Hand Painted Rocks-Road Texture by Texture Me!: https://assetstore.unity.com/packages/2d/textures-materials/hand-painted-rocks-road-texture-196235
+Author Link: https://www.whaleride.com/
+14. Stylized Grass Texture by LOWPOLY: https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153
+Link Author: https://lowlypoly.com/ 
+15. Lowpoly buildings by art georg: https://assetstore.unity.com/packages/3d/environments/lowpoly-buildings-87604 
+Link Author: https://artgeorg22.wixsite.com/portfolio 
+16. Low Poly Medival World by Cole: https://assetstore.unity.com/packages/3d/environments/low-poly-medieval-world-131525 
+Link Author: https://www.artstation.com/hauzerlaszlo
+17. Medival Fantasy – Customizable Characters by Lukebox: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/customizable-characters-medieval-fantasy-hd-175251 
+Link Author: https://olipa.games/contact.html 
+18. Logo Yarsi University: https://yarsi.ac.id
+19. Logo Rumah Bijak Digital: https://www.facebook.com/photo/?fbid=195412772858938&set=a.195412769525605 
+20. Puzzle Pack 2: https://kenney.nl/assets/puzzle-pack-2

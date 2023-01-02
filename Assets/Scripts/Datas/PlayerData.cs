@@ -29,11 +29,12 @@ public class PlayerData
         _sceneID = PlayerTrack.playerInstance._sceneID;
         _diffID = PlayerTrack.playerInstance._diffID;
         _profileID = PlayerTrack.playerInstance._profileID;
-        
+
+        GameObject playerObject = GameObject.FindWithTag("Player");
         _position = new float[3];
-        _position[0] = PlayerTrack.playerInstance.transform.position.x;
-        _position[1] = PlayerTrack.playerInstance.transform.position.y;
-        _position[2] = PlayerTrack.playerInstance.transform.position.z;
+        _position[0] = playerObject.transform.position.x;
+        _position[1] = playerObject.transform.position.y;
+        _position[2] = playerObject.transform.position.z;
     }
 
 }
