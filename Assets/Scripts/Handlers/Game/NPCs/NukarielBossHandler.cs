@@ -47,7 +47,7 @@ public class NukarielBossHandler : MonoBehaviour
             if (buttonPressed && PlayerTrack.playerInstance._missionID == 2 && playerNear)
             {
                 StopCoroutine("TouchButton");
-                PlayerTrack.playerInstance._missionID = 3;
+                PlayerTrack.playerInstance._missionID += 1;
             }
         }
     }
