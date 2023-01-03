@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleManagerOne : MonoBehaviour
 {
+    public PuzzleTypeOneHandler canvasObject;
     public GameObject piecesHolder1;
     public GameObject[] pieces1;
 
@@ -15,7 +16,6 @@ public class PuzzleManagerOne : MonoBehaviour
     {
         totalpieces1 = piecesHolder1.transform.childCount;
         pieces1 = new GameObject[totalpieces1];
-        
         for (int i = 0; i < pieces1.Length; i++)
         {
             pieces1[i] = piecesHolder1.transform.GetChild(i).gameObject;
@@ -26,11 +26,10 @@ public class PuzzleManagerOne : MonoBehaviour
     {
         correctPieces += 1;
 
-        Debug.Log("Correct move!");
-
         if (correctPieces == totalpieces1)
         {
-            Debug.Log("You win!");
+            canvasObject.GameEnded = true;
+            canvasObject.ResultScreen(1);
         }
     }
 

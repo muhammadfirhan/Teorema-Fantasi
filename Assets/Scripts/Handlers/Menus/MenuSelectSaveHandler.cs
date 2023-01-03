@@ -349,11 +349,11 @@ public class MenuSelectSaveHandler : MonoBehaviour
             }
             else if (sceneID == 6)
             {
-                result = null;
+                result = "Nukariel_Outro";
             }
             else
             {
-                result = "Nukariel_Intro";
+                result = null;
             }
         }
         else

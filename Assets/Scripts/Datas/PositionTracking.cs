@@ -10,6 +10,7 @@ public class PositionTracking : MonoBehaviour
     public float[] _position1 = new float[3];
     public float[] _position2 = new float[3];
     public float[] _position3 = new float[3];
+    public float[] _tempPos = new float[3];
 
     [SerializeField] private string objectID;
 
