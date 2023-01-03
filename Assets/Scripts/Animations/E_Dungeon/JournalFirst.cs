@@ -69,7 +69,6 @@ public class JournalFirst : MonoBehaviour
                 if (PlayerTrack.playerInstance._missionID < missionID)
                 {
                     PlayerTrack.playerInstance._missionID += 1;
-                    PlayerTrack.playerInstance._questID += 1;
                     canvasUI.GetComponent<ErutaraDungeonUIHandler>().TriggerEnergy();
                     anim.SetBool("QuestCleared", true);
                     anim.SetTrigger("PlayerProximity");

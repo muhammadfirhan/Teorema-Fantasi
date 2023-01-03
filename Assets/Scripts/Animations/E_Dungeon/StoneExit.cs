@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StoneExit : MonoBehaviour
 {
@@ -51,12 +52,24 @@ public class StoneExit : MonoBehaviour
             yield return new WaitForSeconds(1);
             if (buttonPressed && playerNear)
             {
-                if (PlayerTrack.playerInstance._missionID >= missionMinID && PlayerTrack.playerInstance._questID >= 2)
+                if (PlayerTrack.playerInstance._missionID >= missionMinID 
+                    && PlayerTrack.playerInstance._questID >= 2)
                 {
                     anim.SetBool("QuestCleared", true);
                     anim.SetTrigger("PlayerProximity");
                     ButtonUnClicked();
                     StopCoroutine("TouchButton");
+                }
+                else if (PlayerTrack.playerInstance._questID == 1)
+                {
+                    GameObject playerObject = GameObject.FindWithTag("Player");
+                    PositionTracking.positionInstance._tempPos[0] =
+                        playerObject.transform.position.x;
+                    PositionTracking.positionInstance._tempPos[1] =
+                        playerObject.transform.position.y;
+                    PositionTracking.positionInstance._tempPos[2] =
+                        playerObject.transform.position.z;
+                    SceneManager.LoadScene("Puzzle_Type1");
                 }
             }
         }
