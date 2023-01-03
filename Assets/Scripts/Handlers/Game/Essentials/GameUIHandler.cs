@@ -74,6 +74,7 @@ public class GameUIHandler : MonoBehaviour
     {
         //GetPlayerPos();
         SaveSystemPlayer.SavePlayer();
+        SaveSystemProfile.SaveProfile();
         //PlayerTrack.playerInstance.transform.position = prevPos;
         confirmationWindow.SetActive(false);
     }
@@ -140,6 +141,7 @@ public class GameUIHandler : MonoBehaviour
         {
             //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
+            SaveSystemProfile.SaveProfile();
             //PlayerTrack.playerInstance.transform.position = prevPos;
             StartCoroutine(SaveTime());
         }

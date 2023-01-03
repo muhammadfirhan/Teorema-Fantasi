@@ -29,6 +29,14 @@ public class ErutaraDungeonUIHandler : MonoBehaviour
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
         }
+        else if (SceneStateData._previousScene.Equals("Puzzle_Type1"))
+        {
+            float posX = PositionTracking.positionInstance._tempPos[0];
+            float posY = PositionTracking.positionInstance._tempPos[1];
+            float posZ = PositionTracking.positionInstance._tempPos[2];
+            playerObject = GameObject.FindWithTag("Player");
+            playerObject.transform.position = new Vector3(posX, posY, posZ);
+        }
 
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 2)

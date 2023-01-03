@@ -222,6 +222,7 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 200;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 1;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         //SaveSystemPlayer.SavePlayer();
@@ -240,6 +241,7 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 180;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 2;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         //SaveSystemPlayer.SavePlayer();
@@ -258,6 +260,7 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 150;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 3;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
         //SaveSystemPlayer.SavePlayer();

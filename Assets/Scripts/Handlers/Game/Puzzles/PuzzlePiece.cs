@@ -23,6 +23,8 @@ public class PuzzlePiece : MonoBehaviour
         possibleRotations = correctRotation.Length;
         int randomRotate = Random.Range(0, rotations.Length);
         transform.eulerAngles = new Vector3(0, 0, rotations[randomRotate]);
+
+
         if (possibleRotations > 1)
         {
             if (transform.eulerAngles.z == correctRotation[0] || transform.eulerAngles.z == correctRotation[1])

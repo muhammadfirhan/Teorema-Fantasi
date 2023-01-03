@@ -48,27 +48,29 @@ public class PuzzleUIHandler : MonoBehaviour
         {
             if (PlayerTrack.playerInstance._worldID == 1)
             {
+                PlayerTrack.playerInstance._energy -= 3;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 3;
                     SceneManager.LoadScene("Erutara_Dungeon");
                 } 
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 3;
                     SceneManager.LoadScene("Erutara_Library");
                 }
             }
             else if (PlayerTrack.playerInstance._worldID == 2)
             {
+                PlayerTrack.playerInstance._energy -= 3;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 3;
                     SceneManager.LoadScene("Nukariel_Castle");
+                }
+                else if (PlayerTrack.playerInstance._sceneID == 4)
+                {
+                    SceneManager.LoadScene("Nukariel_Hut");
                 }
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 3;
                     SceneManager.LoadScene("Nukariel_Cave");
                 }
             }
@@ -77,27 +79,29 @@ public class PuzzleUIHandler : MonoBehaviour
         {
             if (PlayerTrack.playerInstance._worldID == 1)
             {
+                PlayerTrack.playerInstance._energy -= 7;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 7;
                     SceneManager.LoadScene("Erutara_Dungeon");
                 }
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 7;
                     SceneManager.LoadScene("Erutara_Library");
                 }
             }
             else if (PlayerTrack.playerInstance._worldID == 2)
             {
+                PlayerTrack.playerInstance._energy -= 7;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 7;
                     SceneManager.LoadScene("Nukariel_Castle");
+                }
+                else if (PlayerTrack.playerInstance._sceneID == 4)
+                {
+                    SceneManager.LoadScene("Nukariel_Hut");
                 }
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 7;
                     SceneManager.LoadScene("Nukariel_Cave");
                 }
             }
@@ -106,27 +110,29 @@ public class PuzzleUIHandler : MonoBehaviour
         {
             if (PlayerTrack.playerInstance._worldID == 1)
             {
+                PlayerTrack.playerInstance._energy -= 14;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 14;
                     SceneManager.LoadScene("Erutara_Dungeon");
                 }
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 14;
                     SceneManager.LoadScene("Erutara_Library");
                 }
             }
             else if (PlayerTrack.playerInstance._worldID == 2)
             {
+                PlayerTrack.playerInstance._energy -= 14;
                 if (PlayerTrack.playerInstance._sceneID == 2)
                 {
-                    PlayerTrack.playerInstance._energy -= 14;
                     SceneManager.LoadScene("Nukariel_Castle");
+                }
+                else if (PlayerTrack.playerInstance._sceneID == 4)
+                {
+                    SceneManager.LoadScene("Nukariel_Hut");
                 }
                 else if (PlayerTrack.playerInstance._sceneID == 5)
                 {
-                    PlayerTrack.playerInstance._energy -= 14;
                     SceneManager.LoadScene("Nukariel_Cave");
                 }
             }
