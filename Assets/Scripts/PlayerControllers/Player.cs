@@ -156,6 +156,76 @@ public partial class @Player : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""PuzzleMain"",
+            ""id"": ""33503542-ee62-4476-9bb5-2036e097a9dc"",
+            ""actions"": [
+                {
+                    ""name"": ""RotateLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""895f694f-b4e6-4334-9396-1db09c8f3591"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotateRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""7a4519d3-61c0-4063-8eb0-ff6f966d40ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e47387d0-7991-4aac-8e34-6b726c26a12e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc539263-7964-4dca-b883-ad02419dee3a"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e376152-adf6-48ff-8e73-23d76dc8e28f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c135810c-a402-4b74-8d33-b307040aef38"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -165,6 +235,10 @@ public partial class @Player : IInputActionCollection2, IDisposable
         m_PlayerMain_Move = m_PlayerMain.FindAction("Move", throwIfNotFound: true);
         m_PlayerMain_Look = m_PlayerMain.FindAction("Look", throwIfNotFound: true);
         m_PlayerMain_Interact = m_PlayerMain.FindAction("Interact", throwIfNotFound: true);
+        // PuzzleMain
+        m_PuzzleMain = asset.FindActionMap("PuzzleMain", throwIfNotFound: true);
+        m_PuzzleMain_RotateLeft = m_PuzzleMain.FindAction("RotateLeft", throwIfNotFound: true);
+        m_PuzzleMain_RotateRight = m_PuzzleMain.FindAction("RotateRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -269,10 +343,56 @@ public partial class @Player : IInputActionCollection2, IDisposable
         }
     }
     public PlayerMainActions @PlayerMain => new PlayerMainActions(this);
+
+    // PuzzleMain
+    private readonly InputActionMap m_PuzzleMain;
+    private IPuzzleMainActions m_PuzzleMainActionsCallbackInterface;
+    private readonly InputAction m_PuzzleMain_RotateLeft;
+    private readonly InputAction m_PuzzleMain_RotateRight;
+    public struct PuzzleMainActions
+    {
+        private @Player m_Wrapper;
+        public PuzzleMainActions(@Player wrapper) { m_Wrapper = wrapper; }
+        public InputAction @RotateLeft => m_Wrapper.m_PuzzleMain_RotateLeft;
+        public InputAction @RotateRight => m_Wrapper.m_PuzzleMain_RotateRight;
+        public InputActionMap Get() { return m_Wrapper.m_PuzzleMain; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PuzzleMainActions set) { return set.Get(); }
+        public void SetCallbacks(IPuzzleMainActions instance)
+        {
+            if (m_Wrapper.m_PuzzleMainActionsCallbackInterface != null)
+            {
+                @RotateLeft.started -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateLeft;
+                @RotateLeft.performed -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateLeft;
+                @RotateLeft.canceled -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateLeft;
+                @RotateRight.started -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateRight;
+                @RotateRight.performed -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateRight;
+                @RotateRight.canceled -= m_Wrapper.m_PuzzleMainActionsCallbackInterface.OnRotateRight;
+            }
+            m_Wrapper.m_PuzzleMainActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @RotateLeft.started += instance.OnRotateLeft;
+                @RotateLeft.performed += instance.OnRotateLeft;
+                @RotateLeft.canceled += instance.OnRotateLeft;
+                @RotateRight.started += instance.OnRotateRight;
+                @RotateRight.performed += instance.OnRotateRight;
+                @RotateRight.canceled += instance.OnRotateRight;
+            }
+        }
+    }
+    public PuzzleMainActions @PuzzleMain => new PuzzleMainActions(this);
     public interface IPlayerMainActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IPuzzleMainActions
+    {
+        void OnRotateLeft(InputAction.CallbackContext context);
+        void OnRotateRight(InputAction.CallbackContext context);
     }
 }

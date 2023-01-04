@@ -14,20 +14,6 @@ public class CreateProfileAfterUIHandler : MonoBehaviour
     [SerializeField] private int toMainMenuOffset = 7;
     private float notifTimer = 5.0f;
 
-    private void Start()
-    {
-        SceneStateData.sceneInstance.SetCurrent();
-        // Show profile info on debug console
-        /*
-        Debug.Log("Profile ID: " + PlayerProfile.profileInstance._profileID);
-        Debug.Log("Profile Name: " + PlayerProfile.profileInstance._profileName);
-        Debug.Log("Profile Age: " + PlayerProfile.profileInstance._profileAge);
-        Debug.Log("Profile Gender: " + PlayerProfile.profileInstance._profileGender);
-        Debug.Log("Profile Coin: " + PlayerProfile.profileInstance._profileCoin);
-        Debug.Log("Profile Point: " + PlayerProfile.profileInstance._profilePoint);
-        */
-    }
-
     public void CreateProfile()
     {
         // Get the transform component from the dropdown
@@ -66,7 +52,6 @@ public class CreateProfileAfterUIHandler : MonoBehaviour
                 PlayerProfile.profileInstance._profileCoin = 0;
                 PlayerProfile.profileInstance._profilePoint = 0;
                 SaveSystemProfile.SaveProfile();
-                SceneStateData.sceneInstance.SetPrevious();
 
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
             }

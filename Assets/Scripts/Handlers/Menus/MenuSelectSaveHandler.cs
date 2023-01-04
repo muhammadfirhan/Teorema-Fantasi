@@ -31,7 +31,6 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
     private void Start()
     {
-        SceneStateData.sceneInstance.SetCurrent();
         GetSaves();
     }
 
@@ -99,15 +98,44 @@ public class MenuSelectSaveHandler : MonoBehaviour
             DurationData.durationInstance._hour = pHour;
             DurationData.durationInstance._minute = pMinute;
             DurationData.durationInstance._second = (pHour * 3600) + (pMinute * 60);
-            SceneStateData.sceneInstance.SetPrevious();
-
+            if(PlayerTrack.playerInstance._diffID == 1)
+            {
+                DifficultyData.difficultyInstance._diffID = 1;
+                DifficultyData.difficultyInstance._questID = PlayerTrack.playerInstance._questID;
+                DifficultyData.difficultyInstance._energyLimit = 200;
+                DifficultyData.difficultyInstance._missionID = PlayerTrack.playerInstance._missionID;
+            }
+            else if(PlayerTrack.playerInstance._diffID == 2)
+            {
+                DifficultyData.difficultyInstance._diffID = 2;
+                DifficultyData.difficultyInstance._questID = PlayerTrack.playerInstance._questID;
+                DifficultyData.difficultyInstance._energyLimit = 180;
+                DifficultyData.difficultyInstance._missionID = PlayerTrack.playerInstance._missionID;
+            }
+            else if (PlayerTrack.playerInstance._diffID == 3)
+            {
+                DifficultyData.difficultyInstance._diffID = 3;
+                DifficultyData.difficultyInstance._questID = PlayerTrack.playerInstance._questID;
+                DifficultyData.difficultyInstance._energyLimit = 150;
+                DifficultyData.difficultyInstance._missionID = PlayerTrack.playerInstance._missionID;
+            }
+            PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
             SceneManager.LoadScene(sceneName);
         }
     }
 
     public void BackToMenu()
     {
-        SceneStateData.sceneInstance.SetPrevious();
+        PlayerTrack.playerInstance._playerID = 0;
+        PlayerTrack.playerInstance._characterName = "";
+        PlayerTrack.playerInstance._characterGender = "";
+        PlayerTrack.playerInstance._questID = 0;
+        PlayerTrack.playerInstance._missionID = 0;
+        PlayerTrack.playerInstance._worldID = 0;
+        PlayerTrack.playerInstance._energy = 0;
+        PlayerTrack.playerInstance._sceneID = 0;
+        PlayerTrack.playerInstance._diffID = 0;
+        PlayerTrack.playerInstance._profileID = 0;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
     }
@@ -117,7 +145,18 @@ public class MenuSelectSaveHandler : MonoBehaviour
         DurationData.durationInstance._hour = 0;
         DurationData.durationInstance._minute = 0;
         DurationData.durationInstance._second = 0;
+        PlayerTrack.playerInstance._playerID = 0 ;
+        PlayerTrack.playerInstance._characterName = null;
+        PlayerTrack.playerInstance._characterGender = null;
+        PlayerTrack.playerInstance._questID = 0;
+        PlayerTrack.playerInstance._missionID = 0;
+        PlayerTrack.playerInstance._worldID = 0;
+        PlayerTrack.playerInstance._energy = 0;
+        PlayerTrack.playerInstance._sceneID = 0;
+        PlayerTrack.playerInstance._diffID = 0;
+        PlayerTrack.playerInstance._profileID = 0;
         sceneName = "";
+
         durationObject.SetActive(false);
     }
 
@@ -127,7 +166,19 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
         if (data != null)
         {
+            PlayerTrack.playerInstance._playerID = data._id;
+            PlayerTrack.playerInstance._characterName= data._characterName;
+            PlayerTrack.playerInstance._characterGender = data._characterGender;
+            PlayerTrack.playerInstance._questID= data._questID;
+            PlayerTrack.playerInstance._missionID = data._missionID;
+            PlayerTrack.playerInstance._worldID = data._worldID;
+            PlayerTrack.playerInstance._energy = data._energy;
+            PlayerTrack.playerInstance._sceneID = data._sceneID;
+            PlayerTrack.playerInstance._diffID = data._diffID;
+            PlayerTrack.playerInstance._profileID = data._profileID;
+
             sceneName = GetScene(data._worldID, data._sceneID);
+            durationObject.SetActive(true);
         }
         else
         {
@@ -141,7 +192,19 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
         if (data != null)
         {
+            PlayerTrack.playerInstance._playerID = data._id;
+            PlayerTrack.playerInstance._characterName = data._characterName;
+            PlayerTrack.playerInstance._characterGender = data._characterGender;
+            PlayerTrack.playerInstance._questID = data._questID;
+            PlayerTrack.playerInstance._missionID = data._missionID;
+            PlayerTrack.playerInstance._worldID = data._worldID;
+            PlayerTrack.playerInstance._energy = data._energy;
+            PlayerTrack.playerInstance._sceneID = data._sceneID;
+            PlayerTrack.playerInstance._diffID = data._diffID;
+            PlayerTrack.playerInstance._profileID = data._profileID;
+
             sceneName = GetScene(data._worldID, data._sceneID);
+            durationObject.SetActive(true);
         }
         else
         {
@@ -155,7 +218,19 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
         if (data != null)
         {
+            PlayerTrack.playerInstance._playerID = data._id;
+            PlayerTrack.playerInstance._characterName = data._characterName;
+            PlayerTrack.playerInstance._characterGender = data._characterGender;
+            PlayerTrack.playerInstance._questID = data._questID;
+            PlayerTrack.playerInstance._missionID = data._missionID;
+            PlayerTrack.playerInstance._worldID = data._worldID;
+            PlayerTrack.playerInstance._energy = data._energy;
+            PlayerTrack.playerInstance._sceneID = data._sceneID;
+            PlayerTrack.playerInstance._diffID = data._diffID;
+            PlayerTrack.playerInstance._profileID = data._profileID;
+
             sceneName = GetScene(data._worldID, data._sceneID);
+            durationObject.SetActive(true);
         }
         else
         {
@@ -169,7 +244,19 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
         if (data != null)
         {
+            PlayerTrack.playerInstance._playerID = data._id;
+            PlayerTrack.playerInstance._characterName = data._characterName;
+            PlayerTrack.playerInstance._characterGender = data._characterGender;
+            PlayerTrack.playerInstance._questID = data._questID;
+            PlayerTrack.playerInstance._missionID = data._missionID;
+            PlayerTrack.playerInstance._worldID = data._worldID;
+            PlayerTrack.playerInstance._energy = data._energy;
+            PlayerTrack.playerInstance._sceneID = data._sceneID;
+            PlayerTrack.playerInstance._diffID = data._diffID;
+            PlayerTrack.playerInstance._profileID = data._profileID;
+
             sceneName = GetScene(data._worldID, data._sceneID);
+            durationObject.SetActive(true);
         }
         else
         {
@@ -183,7 +270,19 @@ public class MenuSelectSaveHandler : MonoBehaviour
 
         if (data != null)
         {
+            PlayerTrack.playerInstance._playerID = data._id;
+            PlayerTrack.playerInstance._characterName = data._characterName;
+            PlayerTrack.playerInstance._characterGender = data._characterGender;
+            PlayerTrack.playerInstance._questID = data._questID;
+            PlayerTrack.playerInstance._missionID = data._missionID;
+            PlayerTrack.playerInstance._worldID = data._worldID;
+            PlayerTrack.playerInstance._energy = data._energy;
+            PlayerTrack.playerInstance._sceneID = data._sceneID;
+            PlayerTrack.playerInstance._diffID = data._diffID;
+            PlayerTrack.playerInstance._profileID = data._profileID;
+
             sceneName = GetScene(data._worldID, data._sceneID);
+            durationObject.SetActive(true);
         }
         else
         {
@@ -199,51 +298,67 @@ public class MenuSelectSaveHandler : MonoBehaviour
         {
             if (sceneID == 1)
             {
-                result = "Erutara_Dungeon";
+                result = "Erutara_Intro";
             }
             else if (sceneID == 2)
             {
-                result = "Erutara_Open";
+                result = "Erutara_Dungeon";
             }
             else if (sceneID == 3)
             {
-                result = "Erutara_Hall";
+                result = "Erutara_Open";
             }
             else if (sceneID == 4)
             {
+                result = "Erutara_Hall";
+            }
+            else if (sceneID == 5)
+            {
                 result = "Erutara_Library";
+            }
+            else if (sceneID == 6)
+            {
+                result = "Erutara_Outro";
             }
             else
             {
-                result = "Erutara_Intro";
+                result = null;
             }
         }
         else if (worldID == 2)
         {
             if (sceneID == 1)
             {
-                result = "Nukariel_Castle";
+                result = "Nukariel_Intro";
             }
             else if (sceneID == 2)
             {
-                result = "Nukariel_Forest";
+                result = "Nukariel_Castle";
             }
             else if (sceneID == 3)
             {
-                result = "Nukariel_Hut";
+                result = "Nukariel_Forest";
             }
             else if (sceneID == 4)
             {
+                result = "Nukariel_Hut";
+            }
+            else if (sceneID == 5)
+            {
                 result = "Nukariel_Cave";
+            }
+            else if (sceneID == 6)
+            {
+                result = "Nukariel_Outro";
             }
             else
             {
-                result = "Nukariel_Intro";
+                result = null;
             }
         }
         else
         {
-            result = "null";
+            result = null;
         }
 
         return result;

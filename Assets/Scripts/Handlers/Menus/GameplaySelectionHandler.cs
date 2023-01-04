@@ -37,17 +37,12 @@ public class GameplaySelectionHandler : MonoBehaviour
     public Image recommendDifficultyImage2;
     public Image recommendDifficultyImage3;
 
-    private void Start()
-    {
-        SceneStateData.sceneInstance.SetCurrent();
-    }
-
     public void BackToMenu()
     {
         DurationData.durationInstance._hour = 0;
         DurationData.durationInstance._minute = 0;
         DurationData.durationInstance._second = 0;
-        SceneStateData.sceneInstance.SetPrevious();
+        PlayerTrack.playerInstance._playerID = 0;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - toMainMenuOffset);
     }
@@ -121,7 +116,6 @@ public class GameplaySelectionHandler : MonoBehaviour
 
     public void ReturnStory()
     {
-        PlayerTrack.playerInstance._playerID = 0;
         PlayerTrack.playerInstance._characterName = "";
         PlayerTrack.playerInstance._characterGender = "";
         PlayerTrack.playerInstance._worldID = 0;
@@ -149,18 +143,6 @@ public class GameplaySelectionHandler : MonoBehaviour
         }
         else if (pName.Length >= 3)
         {
-            int saveNum = SaveSystemPlayer.CountSaveFiles();
-            saveNum += 1;
-            if(saveNum <= 5)
-            {
-                PlayerTrack.playerInstance._playerID = saveNum;
-            }
-            else
-            {
-                saveNum -= 1;
-                PlayerTrack.playerInstance._playerID = saveNum;
-            }
-
             PlayerTrack.playerInstance._characterName = pName;
             PlayerTrack.playerInstance._characterGender = pGender;
             PlayerTrack.playerInstance._profileID = PlayerProfile.profileInstance._profileID;
@@ -221,8 +203,8 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._questID = 0;
         PlayerTrack.playerInstance._missionID = 0;
         PlayerTrack.playerInstance._energy = 0;
-        PlayerTrack.playerInstance._diffID = 0;
         PlayerTrack.playerInstance._sceneID = 0;
+        PlayerTrack.playerInstance._diffID = 0;
         recommendDifficultyImage1.enabled = false;
         recommendDifficultyImage2.enabled = false;
         recommendDifficultyImage3.enabled = false;
@@ -240,9 +222,10 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 200;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 1;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
-        SceneStateData.sceneInstance.SetPrevious();
+        //SaveSystemPlayer.SavePlayer();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
@@ -258,9 +241,10 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 180;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 2;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
-        SceneStateData.sceneInstance.SetPrevious();
+        //SaveSystemPlayer.SavePlayer();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
@@ -276,9 +260,10 @@ public class GameplaySelectionHandler : MonoBehaviour
         PlayerTrack.playerInstance._energy = 150;
         PlayerTrack.playerInstance._sceneID = 1;
         PlayerTrack.playerInstance._diffID = 3;
+        PlayerProfile.profileInstance._profilePoint = 0;
         sendTo = SelectWorld(PlayerTrack.playerInstance._worldID);
         PositionTracking.positionInstance.SetPosition(PlayerTrack.playerInstance._worldID);
-        SceneStateData.sceneInstance.SetPrevious();
+        //SaveSystemPlayer.SavePlayer();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sendTo);
     }
