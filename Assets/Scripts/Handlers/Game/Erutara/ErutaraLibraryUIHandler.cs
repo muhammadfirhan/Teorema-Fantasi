@@ -13,13 +13,21 @@ public class ErutaraLibraryUIHandler : MonoBehaviour
     public GameObject journalUI;
     public GameObject journalObject;
     public GameObject energyUI;
-    private GameObject playerObject;
+    [SerializeField] private GameObject playerObject;
 
     private int energyLimit;
     private float waitAddEnergy = 60f;
 
     private void Awake()
     {
+        if (SceneStateData._previousScene.Equals("Puzzle_Type1"))
+        {
+            float posX = PositionTracking.positionInstance._tempPos[0];
+            float posY = PositionTracking.positionInstance._tempPos[1];
+            float posZ = PositionTracking.positionInstance._tempPos[2];
+            playerObject = GameObject.FindWithTag("Player");
+            playerObject.transform.position = new Vector3(posX, posY, posZ);
+        }
         StartCoroutine(SetTimer());
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 2)
