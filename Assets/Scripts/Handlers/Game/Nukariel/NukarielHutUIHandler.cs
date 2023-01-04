@@ -20,6 +20,14 @@ public class NukarielHutUIHandler : MonoBehaviour
 
     private void Awake()
     {
+        if (SceneStateData._previousScene.Equals("Puzzle_Type1"))
+        {
+            float posX = PositionTracking.positionInstance._tempPos[0];
+            float posY = PositionTracking.positionInstance._tempPos[1];
+            float posZ = PositionTracking.positionInstance._tempPos[2];
+            playerObject = GameObject.FindWithTag("Player");
+            playerObject.transform.position = new Vector3(posX, posY, posZ);
+        }
         StartCoroutine(SetTimer());
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 5)
