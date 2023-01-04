@@ -13,14 +13,13 @@ public class NukarielCastleUIHandler : MonoBehaviour
     public GameObject journalUI;
     public GameObject journalObject;
     public GameObject energyUI;
-    private GameObject playerObject;
+    [SerializeField] private GameObject playerObject;
 
     private int energyLimit;
     private float waitAddEnergy = 60f;
 
     private void Awake()
     {
-        StartCoroutine(SetTimer());
         if (SceneStateData._previousScene.Equals("Nukariel_Forest"))
         {
             float posX = PositionTracking.positionInstance._position1[0];
@@ -29,6 +28,15 @@ public class NukarielCastleUIHandler : MonoBehaviour
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
         }
+        else if (SceneStateData._previousScene.Equals("Puzzle_Type1"))
+        {
+            float posX = PositionTracking.positionInstance._tempPos[0];
+            float posY = PositionTracking.positionInstance._tempPos[1];
+            float posZ = PositionTracking.positionInstance._tempPos[2];
+            playerObject = GameObject.FindWithTag("Player");
+            playerObject.transform.position = new Vector3(posX, posY, posZ);
+        }
+        StartCoroutine(SetTimer());
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 5)
         {

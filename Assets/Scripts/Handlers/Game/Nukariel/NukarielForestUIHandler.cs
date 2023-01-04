@@ -20,7 +20,6 @@ public class NukarielForestUIHandler : MonoBehaviour
 
     private void Awake()
     {
-        StartCoroutine(SetTimer());
         if (SceneStateData._previousScene.Equals("Nukariel_Hut"))
         {
             float posX = PositionTracking.positionInstance._position2[0];
@@ -37,6 +36,7 @@ public class NukarielForestUIHandler : MonoBehaviour
             playerObject = GameObject.FindWithTag("Player");
             playerObject.transform.position = new Vector3(posX, posY, posZ);
         }
+        StartCoroutine(SetTimer());
 
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 5)

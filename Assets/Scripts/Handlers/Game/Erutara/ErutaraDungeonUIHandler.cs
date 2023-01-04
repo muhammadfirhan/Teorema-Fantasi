@@ -13,31 +13,37 @@ public class ErutaraDungeonUIHandler : MonoBehaviour
     public GameObject journalUI;
     public GameObject journalObject;
     public GameObject energyUI;
-    private GameObject playerObject;
+    [SerializeField] private GameObject playerObject;
 
     private int energyLimit;
     private float waitAddEnergy = 60f;
 
     private void Awake()
     {
-        StartCoroutine(SetTimer());
         if (SceneStateData._previousScene.Equals("Erutara_Open"))
         {
             float posX = PositionTracking.positionInstance._position1[0];
             float posY = PositionTracking.positionInstance._position1[1];
             float posZ = PositionTracking.positionInstance._position1[2];
             playerObject = GameObject.FindWithTag("Player");
-            playerObject.transform.position = new Vector3(posX, posY, posZ);
+            Debug.Log("About to move player (currently located at " + playerObject.transform.position +
+                ") at the position " + new Vector3(posX, posY, posZ));
+            SetPlayerPos(posX, posY, posZ);
+            Debug.Log("Player has been moved at " + playerObject.transform.position);
         }
         else if (SceneStateData._previousScene.Equals("Puzzle_Type1"))
         {
+
             float posX = PositionTracking.positionInstance._tempPos[0];
             float posY = PositionTracking.positionInstance._tempPos[1];
             float posZ = PositionTracking.positionInstance._tempPos[2];
             playerObject = GameObject.FindWithTag("Player");
-            playerObject.transform.position = new Vector3(posX, posY, posZ);
+            Debug.Log("About to move player (currently located at " + playerObject.transform.position +
+                ") at the position " + new Vector3(posX, posY, posZ));
+            SetPlayerPos(posX, posY, posZ);
+            Debug.Log("Player has been moved at " + playerObject.transform.position);
         }
-
+        StartCoroutine(SetTimer());
         energyLimit = DifficultyData.difficultyInstance._energyLimit;
         if (PlayerTrack.playerInstance._missionID >= 2)
         {
@@ -60,7 +66,6 @@ public class ErutaraDungeonUIHandler : MonoBehaviour
             Debug.Log("Waktu habis");
             DurationData.durationInstance._second = 0;
             StopCoroutine(SetTimer());
-            //GetPlayerPos();
             SaveSystemPlayer.SavePlayer();
             StartCoroutine(SaveTime());
         }
@@ -105,13 +110,10 @@ public class ErutaraDungeonUIHandler : MonoBehaviour
         StartCoroutine(AddEnergy(energyText));
     }
 
-    private void GetPlayerPos()
+    private void SetPlayerPos(float posX, float posY, float posZ)
     {
         playerObject = GameObject.FindWithTag("Player");
-        //prevPos = PlayerTrack.playerInstance.transform.position;
-        //PlayerTrack.playerInstance.transform.position = playerObject.transform.position;
-        //PlayerTrack.playerInstance.objectID = name + playerObject.transform.position;
-        playerObject = null;
+        playerObject.transform.position = new Vector3(posX, posY, posZ);
     }
 
     IEnumerator AddEnergy(TMP_Text theText)
