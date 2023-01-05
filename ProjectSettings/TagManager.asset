@@ -48,3 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BlocksGrid
+    uniqueID: 3623134875
+    locked: 0
+  - name: Blocks
+    uniqueID: 1295339181
+    locked: 0
