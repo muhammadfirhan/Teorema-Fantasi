@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class ChoosePuzzleTwo : MonoBehaviour
+public class BlockArea : MonoBehaviour
 {
-    
+    public GameObject correctBlock;
 }
